@@ -12,11 +12,11 @@ const Home = ({ language }) => {
   const content = {
     en: {
       hero: {
-        title: "FROM €150K LOSS TO",
-        highlight: "BREAKTHROUGH SUCCESS",
-        subtitle: "Transform Your Life with AI-Powered Coaching",
-        description: "With 15+ years of international experience, I've transformed challenges into opportunities across education, property management, and digital innovation. From losing everything to building a thriving AI-powered coaching business.",
-        cta: "Start Your Transformation",
+        title: "ELIO MONDELLO ANZÀ",
+        highlight: "AI-POWERED BUSINESS TRANSFORMATION",
+        subtitle: "Help Italian Entrepreneurs in Norway Grow with Technology & Winning Strategies",
+        description: "15 years in international education and business development. I transform businesses with AI automation, multilingual coaching, and proven strategies tested on 250+ properties generating €150k+ revenue.",
+        cta: "Book Free Consultation",
         scroll: "Scroll to Discover"
       },
       stats: [
@@ -28,23 +28,23 @@ const Home = ({ language }) => {
         { number: "12", label: "AI Assistants", icon: "🤖" }
       ],
       services: {
-        title: "Transform Your Business",
-        subtitle: "Three core areas where I help you achieve breakthrough results",
+        title: "How I Help You Grow",
+        subtitle: "Three proven areas for business transformation",
         items: [
           {
-            title: "Business Coaching",
-            description: "Tailored AI-driven strategies to unlock your full potential and accelerate growth",
-            icon: "🎯"
+            title: "AI Business Automation",
+            description: "Transform your operations with 12 specialized AI assistants and proven automation strategies",
+            icon: "🤖"
           },
           {
-            title: "Digital Transformation",
-            description: "Strategic growth and optimization using cutting-edge AI tools and technologies",
-            icon: "🚀"
+            title: "International Expansion",
+            description: "Multilingual coaching and cultural insights to expand your business globally",
+            icon: "🌍"
           },
           {
-            title: "Language & Communication",
-            description: "Multilingual coaching in English, Italian, Norwegian, and French with global insights",
-            icon: "🗣️"
+            title: "Property & Revenue Optimization",
+            description: "Proven strategies that generated €150k+ revenue from 250+ properties",
+            icon: "📈"
           }
         ]
       },
@@ -75,11 +75,11 @@ const Home = ({ language }) => {
     },
     it: {
       hero: {
-        title: "DA €150K DI PERDITE A",
-        highlight: "SUCCESSO STRAORDINARIO",
-        subtitle: "Trasforma la Tua Vita con Coaching Potenziato dall'IA",
-        description: "Con oltre 15 anni di esperienza internazionale, ho trasformato le sfide in opportunità nell'educazione, gestione immobiliare e innovazione digitale. Dal perdere tutto al costruire un business di coaching fiorente.",
-        cta: "Inizia la Tua Trasformazione",
+        title: "ELIO MONDELLO ANZÀ",
+        highlight: "TRASFORMAZIONE DIGITALE CON IA",
+        subtitle: "Aiuto Imprenditori Italiani in Norvegia a Crescere con Tecnologia e Strategie Vincenti",
+        description: "15 anni nell'educazione e sviluppo business internazionale. Trasformo aziende con automazione IA, coaching multilingue e strategie testate su 250+ proprietà che generano €150k+ di fatturato.",
+        cta: "Prenota Consulenza Gratuita",
         scroll: "Scorri per Scoprire"
       },
       stats: [
@@ -91,23 +91,23 @@ const Home = ({ language }) => {
         { number: "12", label: "Assistenti IA", icon: "🤖" }
       ],
       services: {
-        title: "Trasforma il Tuo Business",
-        subtitle: "Tre aree principali dove ti aiuto a raggiungere risultati straordinari",
+        title: "Come Ti Aiuto a Crescere",
+        subtitle: "Tre aree comprovate per la trasformazione aziendale",
         items: [
           {
-            title: "Business Coaching",
-            description: "Strategie personalizzate guidate dall'IA per sbloccare il tuo pieno potenziale",
-            icon: "🎯"
+            title: "Automazione Business con IA",
+            description: "Trasforma le tue operazioni con 12 assistenti IA specializzati e strategie di automazione testate",
+            icon: "🤖"
           },
           {
-            title: "Trasformazione Digitale",
-            description: "Crescita strategica e ottimizzazione usando strumenti IA all'avanguardia",
-            icon: "🚀"
+            title: "Espansione Internazionale",
+            description: "Coaching multilingue e insights culturali per espandere il tuo business globalmente",
+            icon: "🌍"
           },
           {
-            title: "Lingue & Comunicazione",
-            description: "Coaching multilingue in inglese, italiano, norvegese e francese",
-            icon: "🗣️"
+            title: "Ottimizzazione Proprietà e Ricavi",
+            description: "Strategie comprovate che hanno generato €150k+ di fatturato da 250+ proprietà",
+            icon: "📈"
           }
         ]
       },
@@ -138,11 +138,11 @@ const Home = ({ language }) => {
     },
     no: {
       hero: {
-        title: "FRA €150K TAP TIL",
-        highlight: "GJENNOMBRUDD SUKSESS",
-        subtitle: "Transformer Livet Ditt med AI-Drevet Coaching",
-        description: "Med 15+ års internasjonal erfaring har jeg forvandlet utfordringer til muligheter innen utdanning, eiendomsforvaltning og digital innovasjon. Fra å miste alt til å bygge en blomstrende AI-drevet coaching-virksomhet.",
-        cta: "Start Din Transformasjon",
+        title: "ELIO MONDELLO ANZÀ",
+        highlight: "AI-DREVET DIGITAL TRANSFORMASJON",
+        subtitle: "Hjelper Italienske Entreprenører i Norge å Vokse med Teknologi og Vinnende Strategier",
+        description: "15 år innen internasjonal utdanning og forretningsutvikling. Jeg transformerer virksomheter med AI-automatisering, flerspråklig coaching og beviste strategier testet på 250+ eiendommer som genererer €150k+ inntekt.",
+        cta: "Book Gratis Konsultasjon",
         scroll: "Rull for å Oppdage"
       },
       stats: [
@@ -154,23 +154,23 @@ const Home = ({ language }) => {
         { number: "12", label: "AI Assistenter", icon: "🤖" }
       ],
       services: {
-        title: "Transformer Din Virksomhet",
-        subtitle: "Tre kjerneområder hvor jeg hjelper deg oppnå gjennombrudd resultater",
+        title: "Hvordan Jeg Hjelper Deg Vokse",
+        subtitle: "Tre beviste områder for virksomhetstransformasjon",
         items: [
           {
-            title: "Business Coaching",
-            description: "Skreddersydde AI-drevne strategier for å låse opp ditt fulle potensial",
-            icon: "🎯"
+            title: "AI Business Automatisering",
+            description: "Transformer dine operasjoner med 12 spesialiserte AI-assistenter og beviste automatiseringsstrategier",
+            icon: "🤖"
           },
           {
-            title: "Digital Transformasjon",
-            description: "Strategisk vekst og optimalisering med banebrytende AI-verktøy",
-            icon: "🚀"
+            title: "Internasjonal Ekspansjon",
+            description: "Flerspråklig coaching og kulturelle innsikter for å utvide virksomheten globalt",
+            icon: "🌍"
           },
           {
-            title: "Språk & Kommunikasjon",
-            description: "Flerspråklig coaching på engelsk, italiensk, norsk og fransk",
-            icon: "🗣️"
+            title: "Eiendom & Inntektsoptimalisering",
+            description: "Beviste strategier som genererte €150k+ inntekt fra 250+ eiendommer",
+            icon: "📈"
           }
         ]
       },
@@ -236,11 +236,11 @@ const Home = ({ language }) => {
                 <span className="text-yellow-400">{currentContent.hero.highlight}</span>
               </h1>
               
-              <h2 className="text-xl md:text-2xl text-gray-300 mb-6 font-light">
+              <h2 className="text-xl md:text-2xl text-white mb-6 font-medium">
                 {currentContent.hero.subtitle}
               </h2>
               
-              <p className="text-lg text-gray-400 mb-8 max-w-2xl">
+              <p className="text-lg text-white mb-8 max-w-2xl font-medium">
                 {currentContent.hero.description}
               </p>
 
@@ -336,7 +336,7 @@ const Home = ({ language }) => {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               {currentContent.services.title}
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto font-medium">
               {currentContent.services.subtitle}
             </p>
           </motion.div>
@@ -354,7 +354,7 @@ const Home = ({ language }) => {
                 <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-200 leading-relaxed font-medium">
                   {service.description}
                 </p>
               </motion.div>
@@ -374,7 +374,7 @@ const Home = ({ language }) => {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               {currentContent.packages.title}
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto font-medium">
               {currentContent.packages.subtitle}
             </p>
           </motion.div>

@@ -46,18 +46,16 @@ const Navigation = ({ language, setLanguage }) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-yellow-400 hover:text-yellow-300 transition-colors">
-            ELIO MONDELLO
+            ELIO MONDELLO ANZÀ
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems[language].map((item) => (
+            {menuItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-yellow-400 ${
-                  location.pathname === item.path ? 'text-yellow-400' : 'text-white'
-                }`}
+                className="text-white hover:text-yellow-400 transition-colors font-semibold text-lg"
               >
                 {item.label}
               </Link>
@@ -117,7 +115,7 @@ const Navigation = ({ language, setLanguage }) => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-yellow-400 ${
+                  className={`block px-3 py-2 text-lg font-semibold transition-colors hover:text-yellow-400 ${
                     location.pathname === item.path ? 'text-yellow-400' : 'text-white'
                   }`}
                 >
