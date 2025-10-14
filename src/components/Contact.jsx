@@ -51,8 +51,8 @@ const Contact = ({ language }) => {
           {
             icon: Mail,
             label: "Email",
-            value: "elio@mondosol.com",
-            link: "mailto:elio@mondosol.com"
+            value: "eliomondello@mondosol.com",
+            link: "mailto:eliomondello@mondosol.com"
           },
           {
             icon: Phone,
@@ -124,8 +124,8 @@ const Contact = ({ language }) => {
           {
             icon: Mail,
             label: "Email",
-            value: "elio@mondosol.com",
-            link: "mailto:elio@mondosol.com"
+            value: "eliomondello@mondosol.com",
+            link: "mailto:eliomondello@mondosol.com"
           },
           {
             icon: Phone,
@@ -197,8 +197,8 @@ const Contact = ({ language }) => {
           {
             icon: Mail,
             label: "E-post",
-            value: "elio@mondosol.com",
-            link: "mailto:elio@mondosol.com"
+            value: "eliomondello@mondosol.com",
+            link: "mailto:eliomondello@mondosol.com"
           },
           {
             icon: Phone,

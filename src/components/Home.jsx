@@ -1,465 +1,374 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Star, Users, TrendingUp, Globe, ChevronDown } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { motion } from 'framer-motion'
-import elioPortrait from '../assets/73f58f9b-1e3f-4484-8811-734a13a7fbc6-IMG_20250709_164428041_HDR_PORTRAIT.jpg'
-import elioProfile from '../assets/YellowInspirationModernInstagramProfilePicture.png'
+import { motion, AnimatePresence } from 'framer-motion'
+
+// Import all images
+import img1 from '../assets/73f58f9b-1e3f-4484-8811-734a13a7fbc6-IMG_20250709_164428041_HDR_PORTRAIT.jpg'
+import img2 from '../assets/IMG_20230917_191400957_HDR-EDIT.jpg'
+import img3 from '../assets/IMG_20240611_162138568_HDR.jpg'
+import img4 from '../assets/WIN_20201005_22_30_13_Pro-EDIT.jpg'
+import img5 from '../assets/9164aa45-760b-43cf-98a7-93bb71e291f7.jpg'
+import img6 from '../assets/IMG_20220610_125357490_HDR_PORTRAIT.jpg'
 
 const Home = ({ language }) => {
-  const [currentStat, setCurrentStat] = useState(0)
+  const [currentImage, setCurrentImage] = useState(0)
+  
+  const heroImages = [img1, img2, img3, img4, img5, img6]
 
   const content = {
     en: {
       hero: {
-        title: "ELIO MONDELLO ANZÀ",
-        highlight: "MARKETING & CONTENT SPECIALIST",
-        subtitle: "Copywriting • SEO/GEO • Multilingual Content • Digital Marketing",
-        description: "Experienced professional with 15+ years in education and business development. Currently writing articles for local businesses and managing digital marketing projects. Fluent in 4 languages with proven results in content creation and search optimization.",
-        cta: "See My Work",
-        scroll: "Scroll to Discover"
+        firstName: "ELIO",
+        lastName: "MONDELLO ANZÀ",
+        title: "CONTENT SPECIALIST",
+        scroll: "SCROLL"
+      },
+      cta: {
+        primary: "VIEW MY WORK",
+        secondary: "CONTACT"
       },
       stats: [
-        { number: "250+", label: "Properties Managed", icon: "🏠" },
-        { number: "€150K+", label: "Annual Revenue", icon: "💰" },
-        { number: "Top 3", label: "Airbnb Italy", icon: "⭐" },
-        { number: "15+", label: "Years Experience", icon: "📈" },
-        { number: "4", label: "Languages", icon: "🌍" },
-        { number: "12", label: "AI Assistants", icon: "🤖" }
-      ],
-      services: {
-        title: "What I Can Do For Your Company",
-        subtitle: "Practical skills and services I can provide immediately",
-        items: [
-          {
-            title: "Content Writing & Copywriting",
-            description: "Articles, website content, social media posts, and marketing materials. Currently writing for Munkmuseet and local businesses.",
-            icon: "✍️"
-          },
-          {
-            title: "SEO & Search Optimization",
-            description: "Help your business get found on Google and other search engines. Expert in both traditional SEO and new GEO (AI-powered search).",
-            icon: "🔍"
-          },
-          {
-            title: "Multilingual Marketing",
-            description: "Create content in Norwegian, English, Italian, and French. Perfect for businesses targeting international customers.",
-            icon: "🌍"
-          }
-        ]
-      },
-      packages: {
-        title: "Coaching Packages",
-        subtitle: "Choose the perfect package for your transformation journey",
-        items: [
-          {
-            name: "Starter",
-            price: "€297",
-            features: ["4 Personalized Sessions", "Basic AI Toolkit", "30-Day Email Support"],
-            popular: false
-          },
-          {
-            name: "Professional",
-            price: "€997",
-            features: ["8 Advanced Sessions", "Comprehensive AI Integration", "Unlimited Email Support", "Monthly Progress Review"],
-            popular: true
-          },
-          {
-            name: "Elite Transformation",
-            price: "€1,999",
-            features: ["Unlimited Sessions", "Full AI Ecosystem Access", "Personal AI Assistant", "Quarterly Strategic Planning", "Priority Support"],
-            popular: false
-          }
-        ]
-      }
+        { number: "250+", label: "PROPERTIES" },
+        { number: "€150K+", label: "REVENUE" },
+        { number: "TOP 3", label: "AIRBNB" },
+        { number: "15+", label: "YEARS" },
+        { number: "4", label: "LANGUAGES" }
+      ]
     },
     it: {
       hero: {
-        title: "ELIO MONDELLO ANZÀ",
-        highlight: "SPECIALISTA MARKETING E CONTENUTI",
-        subtitle: "Copywriting • SEO/GEO • Contenuti Multilingue • Marketing Digitale",
-        description: "Professionista esperto con 15+ anni nell'educazione e sviluppo business. Attualmente scrivo articoli per aziende locali e gestisco progetti di marketing digitale. Parlo 4 lingue con risultati comprovati nella creazione di contenuti e ottimizzazione per motori di ricerca.",
-        cta: "Vedi Il Mio Lavoro",
-        scroll: "Scorri per Scoprire"
+        firstName: "ELIO",
+        lastName: "MONDELLO ANZÀ",
+        title: "SPECIALISTA CONTENUTI",
+        scroll: "SCORRI"
+      },
+      cta: {
+        primary: "VEDI IL MIO LAVORO",
+        secondary: "CONTATTO"
       },
       stats: [
-        { number: "250+", label: "Proprietà Gestite", icon: "🏠" },
-        { number: "€150K+", label: "Fatturato Annuale", icon: "💰" },
-        { number: "Top 3", label: "Airbnb Italia", icon: "⭐" },
-        { number: "15+", label: "Anni Esperienza", icon: "📈" },
-        { number: "4", label: "Lingue", icon: "🌍" },
-        { number: "12", label: "Assistenti IA", icon: "🤖" }
-      ],
-      services: {
-        title: "Cosa Posso Fare Per La Tua Azienda",
-        subtitle: "Competenze pratiche e servizi che posso fornire immediatamente",
-        items: [
-          {
-            title: "Scrittura Contenuti & Copywriting",
-            description: "Articoli, contenuti per siti web, post social media e materiali marketing. Attualmente scrivo per Munkmuseet e aziende locali.",
-            icon: "✍️"
-          },
-          {
-            title: "SEO & Ottimizzazione Ricerca",
-            description: "Aiuto la tua azienda a essere trovata su Google e altri motori di ricerca. Esperto sia in SEO tradizionale che in GEO (ricerca potenziata da IA).",
-            icon: "🔍"
-          },
-          {
-            title: "Marketing Multilingue",
-            description: "Creo contenuti in norvegese, inglese, italiano e francese. Perfetto per aziende che puntano a clienti internazionali.",
-            icon: "🌍"
-          }
-        ]
-      },
-      packages: {
-        title: "Pacchetti Coaching",
-        subtitle: "Scegli il pacchetto perfetto per il tuo percorso di trasformazione",
-        items: [
-          {
-            name: "Starter",
-            price: "€297",
-            features: ["4 Sessioni Personalizzate", "Toolkit IA Base", "Supporto Email 30 Giorni"],
-            popular: false
-          },
-          {
-            name: "Professional",
-            price: "€997",
-            features: ["8 Sessioni Avanzate", "Integrazione IA Completa", "Supporto Email Illimitato", "Revisione Mensile"],
-            popular: true
-          },
-          {
-            name: "Elite Transformation",
-            price: "€1,999",
-            features: ["Sessioni Illimitate", "Accesso Ecosistema IA", "Assistente IA Personale", "Pianificazione Strategica", "Supporto Prioritario"],
-            popular: false
-          }
-        ]
-      }
+        { number: "250+", label: "PROPRIETÀ" },
+        { number: "€150K+", label: "FATTURATO" },
+        { number: "TOP 3", label: "AIRBNB" },
+        { number: "15+", label: "ANNI" },
+        { number: "4", label: "LINGUE" }
+      ]
     },
     no: {
       hero: {
-        title: "ELIO MONDELLO ANZÀ",
-        highlight: "MARKEDSFØRING & INNHOLD SPESIALIST",
-        subtitle: "Tekstforfatning • SEO/GEO • Flerspråklig Innhold • Digital Markedsføring",
-        description: "Erfaren profesjonell med 15+ år innen utdanning og forretningsutvikling. Skriver for tiden artikler for lokale bedrifter og leder digitale markedsføringsprosjekter. Snakker 4 språk med dokumenterte resultater innen innholdsproduksjon og søkeoptimalisering.",
-        cta: "Se Mitt Arbeid",
-        scroll: "Rull for å Oppdage"
+        firstName: "ELIO",
+        lastName: "MONDELLO ANZÀ",
+        title: "INNHOLDSSPESIALIST",
+        scroll: "RULL"
+      },
+      cta: {
+        primary: "SE MITT ARBEID",
+        secondary: "KONTAKT"
       },
       stats: [
-        { number: "250+", label: "Eiendommer Forvaltet", icon: "🏠" },
-        { number: "€150K+", label: "Årlig Inntekt", icon: "💰" },
-        { number: "Topp 3", label: "Airbnb Italia", icon: "⭐" },
-        { number: "15+", label: "År Erfaring", icon: "📈" },
-        { number: "4", label: "Språk", icon: "🌍" },
-        { number: "12", label: "AI Assistenter", icon: "🤖" }
-      ],
-      services: {
-        title: "Hva Jeg Kan Gjøre For Bedriften Din",
-        subtitle: "Praktiske ferdigheter og tjenester jeg kan levere umiddelbart",
-        items: [
-          {
-            title: "Innholdskriving & Tekstforfatning",
-            description: "Artikler, nettstedinnhold, sosiale medier-innlegg og markedsføringsmateriell. Skriver for tiden for Munkmuseet og lokale bedrifter.",
-            icon: "✍️"
-          },
-          {
-            title: "SEO & Søkeoptimalisering",
-            description: "Hjelper bedriften din å bli funnet på Google og andre søkemotorer. Ekspert på både tradisjonell SEO og ny GEO (AI-drevet søk).",
-            icon: "🔍"
-          },
-          {
-            title: "Flerspråklig Markedsføring",
-            description: "Lager innhold på norsk, engelsk, italiensk og fransk. Perfekt for bedrifter som retter seg mot internasjonale kunder.",
-            icon: "🌍"
-          }
-        ]
-      },
-      packages: {
-        title: "Coaching Pakker",
-        subtitle: "Velg den perfekte pakken for din transformasjonsreise",
-        items: [
-          {
-            name: "Starter",
-            price: "€297",
-            features: ["4 Personlige Økter", "Grunnleggende AI Verktøy", "30-Dagers E-post Støtte"],
-            popular: false
-          },
-          {
-            name: "Professional",
-            price: "€997",
-            features: ["8 Avanserte Økter", "Omfattende AI Integrasjon", "Ubegrenset E-post Støtte", "Månedlig Fremgangsgjennomgang"],
-            popular: true
-          },
-          {
-            name: "Elite Transformation",
-            price: "€1,999",
-            features: ["Ubegrensede Økter", "Full AI Økosystem Tilgang", "Personlig AI Assistent", "Kvartalsvis Strategisk Planlegging", "Prioritert Støtte"],
-            popular: false
-          }
-        ]
-      }
+        { number: "250+", label: "EIENDOMMER" },
+        { number: "€150K+", label: "INNTEKT" },
+        { number: "TOP 3", label: "AIRBNB" },
+        { number: "15+", label: "ÅR" },
+        { number: "4", label: "SPRÅK" }
+      ]
     }
   }
 
   const currentContent = content[language]
 
+  // Auto-rotate images every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentStat((prev) => (prev + 1) % currentContent.stats.length)
-    }, 3000)
+      setCurrentImage((prev) => (prev + 1) % heroImages.length)
+    }, 5000)
     return () => clearInterval(interval)
-  }, [currentContent.stats.length])
+  }, [heroImages.length])
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
-          <div className="absolute inset-0 opacity-50" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fbbf24' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
+    <div className="min-h-screen bg-black">
+      
+      {/* HERO SECTION - HUGE IMAGE, MINIMAL TEXT */}
+      <section className="relative h-screen flex items-center overflow-hidden">
+        
+        {/* Text Side - Left 40% */}
+        <div className="relative z-10 w-full lg:w-2/5 px-6 lg:px-12 xl:px-16">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="font-bold leading-none mb-6">
+              <span className="block text-[15vw] lg:text-[8vw] xl:text-[10vw] text-white tracking-tighter">
+                {currentContent.hero.firstName}
+              </span>
+              <span className="block text-[10vw] lg:text-[5vw] xl:text-[6vw] text-yellow-400 tracking-tight">
+                {currentContent.hero.lastName}
+              </span>
+            </h1>
+            
+            <p className="text-2xl lg:text-3xl xl:text-4xl text-white font-bold mb-10 tracking-wide">
+              {currentContent.hero.title}
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                asChild
+                size="lg"
+                className="bg-yellow-400 text-black hover:bg-yellow-300 font-bold text-lg px-8 py-6"
+              >
+                <Link to="/portfolio">
+                  {currentContent.cta.primary}
+                </Link>
+              </Button>
+              
+              <Button 
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-2 border-white text-white hover:bg-white hover:text-black font-bold text-lg px-8 py-6"
+              >
+                <Link to="/contact">
+                  {currentContent.cta.secondary}
+                </Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
+        {/* HUGE IMAGE Side - Right 60% */}
+        <div className="absolute lg:relative right-0 top-0 w-full lg:w-3/5 h-full">
+          <AnimatePresence mode="wait">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center lg:text-left"
+              key={currentImage}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className="absolute inset-0"
             >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                <span className="text-white">{currentContent.hero.title}</span>
-                <br />
-                <span className="text-yellow-400">{currentContent.hero.highlight}</span>
-              </h1>
-              
-              <h2 className="text-xl md:text-2xl text-white mb-6 font-medium">
-                {currentContent.hero.subtitle}
-              </h2>
-              
-              <p className="text-lg text-white mb-8 max-w-2xl font-medium">
-                {currentContent.hero.description}
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button 
-                  asChild
-                  size="lg"
-                  className="bg-yellow-400 text-black hover:bg-yellow-300 font-semibold text-lg px-8 py-6"
-                >
-                  <a href="https://mondosol.com/coaching" target="_blank" rel="noopener noreferrer">
-                    {currentContent.hero.cta}
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </a>
-                </Button>
-                
-                <Button 
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black font-semibold text-lg px-8 py-6"
-                >
-                  <Link to="/about">
-                    Learn My Story
-                  </Link>
-                </Button>
-              </div>
+              <img 
+                src={heroImages[currentImage]} 
+                alt="Elio Mondello"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent lg:via-transparent"></div>
             </motion.div>
+          </AnimatePresence>
 
-            {/* Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative w-full max-w-md mx-auto">
-                <div className="absolute inset-0 bg-yellow-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-                <img
-                  src={elioPortrait}
-                  alt="Elio Mondello"
-                  className="relative z-10 w-full h-auto rounded-2xl shadow-2xl"
-                />
-              </div>
-            </motion.div>
+          {/* Image Indicators */}
+          <div className="absolute bottom-10 right-10 flex gap-3 z-20">
+            {heroImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImage(index)}
+                className={`h-3 rounded-full transition-all ${
+                  index === currentImage ? 'bg-yellow-400 w-12' : 'bg-white/50 w-3'
+                }`}
+              />
+            ))}
           </div>
+        </div>
 
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center"
-          >
-            <p className="text-gray-400 text-sm mb-2">{currentContent.hero.scroll}</p>
-            <ChevronDown className="w-6 h-6 text-yellow-400 mx-auto animate-bounce" />
-          </motion.div>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center z-20">
+          <p className="text-yellow-400 font-bold text-sm mb-2 tracking-widest">{currentContent.hero.scroll}</p>
+          <ChevronDown className="w-6 h-6 text-yellow-400 animate-bounce mx-auto" />
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+      {/* STATS - Minimal */}
+      <section className="py-16 bg-black border-t border-yellow-400/20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {currentContent.stats.map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className={`text-center p-6 rounded-lg transition-all duration-300 ${
-                  currentStat === index ? 'bg-yellow-400/10 border border-yellow-400/30' : 'hover:bg-gray-800'
-                }`}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
               >
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-yellow-400 mb-2">
                   {stat.number}
                 </div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              {currentContent.services.title}
-            </h2>
-            <p className="text-xl text-white max-w-3xl mx-auto font-medium">
-              {currentContent.services.subtitle}
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {currentContent.services.items.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className="bg-gray-900 p-8 rounded-xl hover:bg-gray-800 transition-all duration-300 group"
-              >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-200 leading-relaxed font-medium">
-                  {service.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Packages Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              {currentContent.packages.title}
-            </h2>
-            <p className="text-xl text-white max-w-3xl mx-auto font-medium">
-              {currentContent.packages.subtitle}
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {currentContent.packages.items.map((pkg, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className={`relative p-8 rounded-xl border-2 transition-all duration-300 ${
-                  pkg.popular 
-                    ? 'border-yellow-400 bg-yellow-400/5 scale-105' 
-                    : 'border-gray-700 bg-gray-800 hover:border-yellow-400/50'
-                }`}
-              >
-                {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-semibold">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                  <div className="text-4xl font-bold text-yellow-400">{pkg.price}</div>
+                <div className="text-sm md:text-base text-white font-bold tracking-wider">
+                  {stat.label}
                 </div>
-
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-300">
-                      <Star className="w-4 h-4 text-yellow-400 mr-3 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <Button 
-                  asChild
-                  className={`w-full ${
-                    pkg.popular 
-                      ? 'bg-yellow-400 text-black hover:bg-yellow-300' 
-                      : 'bg-gray-700 text-white hover:bg-yellow-400 hover:text-black'
-                  }`}
-                >
-                  <a href="https://mondosol.com/coaching" target="_blank" rel="noopener noreferrer">
-                    Choose {pkg.name}
-                  </a>
-                </Button>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* VISUAL SECTION 1 - COPYWRITING */}
+      <section className="min-h-screen flex items-center bg-black">
+        <div className="w-full">
+          <div className="grid lg:grid-cols-2 gap-0 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="p-12 lg:p-20"
+            >
+              <h2 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white mb-8 leading-none">
+                COPY<br/>WRITING
+              </h2>
+              <Button 
+                asChild
+                size="lg"
+                className="bg-yellow-400 text-black hover:bg-yellow-300 font-bold text-xl px-10 py-6"
+              >
+                <Link to="/portfolio">
+                  SEE WORK
+                </Link>
+              </Button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="h-[600px] lg:h-screen"
+            >
+              <img 
+                src={img2} 
+                alt="Copywriting"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* VISUAL SECTION 2 - SEO */}
+      <section className="min-h-screen flex items-center bg-black">
+        <div className="w-full">
+          <div className="grid lg:grid-cols-2 gap-0 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="h-[600px] lg:h-screen order-2 lg:order-1"
+            >
+              <img 
+                src={img3} 
+                alt="SEO"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="p-12 lg:p-20 order-1 lg:order-2"
+            >
+              <h2 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-yellow-400 mb-8 leading-none">
+                SEO &<br/>GEO
+              </h2>
+              <Button 
+                asChild
+                size="lg"
+                className="bg-white text-black hover:bg-gray-200 font-bold text-xl px-10 py-6"
+              >
+                <Link to="/services">
+                  LEARN MORE
+                </Link>
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* VISUAL SECTION 3 - MULTILINGUAL */}
+      <section className="min-h-screen flex items-center bg-black">
+        <div className="w-full">
+          <div className="grid lg:grid-cols-2 gap-0 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="p-12 lg:p-20"
+            >
+              <h2 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white mb-8 leading-none">
+                MULTI<br/>LINGUAL
+              </h2>
+              <Button 
+                asChild
+                size="lg"
+                className="bg-yellow-400 text-black hover:bg-yellow-300 font-bold text-xl px-10 py-6"
+              >
+                <Link to="/contact">
+                  WORK WITH ME
+                </Link>
+              </Button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="h-[600px] lg:h-screen"
+            >
+              <img 
+                src={img4} 
+                alt="Multilingual"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src={img5} 
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative z-10 text-center px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-12 leading-none"
+          >
+            LET'S WORK<br/>
+            <span className="text-yellow-400">TOGETHER</span>
+          </motion.h2>
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Life?
-            </h2>
-            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Join hundreds of successful entrepreneurs and business leaders who have transformed their lives with my AI-powered coaching approach.
-            </p>
             <Button 
               asChild
               size="lg"
-              className="bg-yellow-400 text-black hover:bg-yellow-300 font-semibold text-lg px-12 py-6"
+              className="bg-yellow-400 text-black hover:bg-yellow-300 font-bold text-3xl px-16 py-10"
             >
-              <a href="https://mondosol.com/coaching" target="_blank" rel="noopener noreferrer">
-                Book Your Free Consultation
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </a>
+              <Link to="/contact">
+                GET IN TOUCH
+              </Link>
             </Button>
           </motion.div>
         </div>
       </section>
+
     </div>
   )
 }
 
 export default Home
+
