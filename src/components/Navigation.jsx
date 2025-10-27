@@ -67,7 +67,7 @@ const Navigation = ({ language, setLanguage }) => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navItems[language].map((item) => (
               <Link
                 key={item.path}
@@ -111,7 +111,7 @@ const Navigation = ({ language, setLanguage }) => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Button
               variant="ghost"
               size="sm"
@@ -125,7 +125,7 @@ const Navigation = ({ language, setLanguage }) => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-black/95 border-t border-yellow-400/20">
               {navItems[language].map((item) => (
                 <Link
