@@ -1,685 +1,241 @@
 import { motion } from 'framer-motion'
-import { Star, Quote, MapPin, Briefcase } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Star, Quote } from 'lucide-react'
 
 const Testimonials = ({ language }) => {
   const content = {
     en: {
       hero: {
-        title: "CLIENT SUCCESS STORIES",
-        subtitle: "Real Transformations, Real Results",
-        description: "Discover how my AI-powered coaching and consulting services have transformed businesses and lives across multiple industries and countries."
+        title: 'TESTIMONIALS',
+        subtitle: 'WHAT CLIENTS SAY',
+        description: 'Real feedback from real clients who achieved extraordinary results.'
       },
       testimonials: [
         {
-          name: "Marco S.",
-          role: "Entrepreneur",
-          company: "Tech Startup",
-          location: "Milan, Italy",
-          image: "marco",
-          rating: 5,
-          quote: "Elio's AI-powered coaching transformed my struggling startup into a thriving business. His strategic insights and personalized approach made all the difference in turning around our company.",
-          results: [
-            "Revenue increased by 300%",
-            "Team productivity improved by 150%",
-            "Successfully secured Series A funding"
-          ],
-          category: "Business Transformation"
+          name: 'Marco Rossi',
+          role: 'Property Owner',
+          company: 'Milan, Italy',
+          quote: 'Elio transformed my property business. Revenue increased by 60% in the first year. His expertise in Airbnb management is unmatched.',
+          rating: 5
         },
         {
-          name: "Elena R.",
-          role: "Freelance Consultant",
-          company: "Digital Marketing Agency",
-          location: "Rome, Italy",
-          image: "elena",
-          rating: 5,
-          quote: "The strategic insights and personalized approach helped me redefine my professional trajectory. Elio's multilingual expertise opened new markets for my services.",
-          results: [
-            "Client base expanded internationally",
-            "Monthly revenue doubled",
-            "Established presence in 3 new countries"
-          ],
-          category: "Professional Development"
+          name: 'Sarah Johnson',
+          role: 'Business Owner',
+          company: 'Oslo, Norway',
+          quote: 'Working with Elio on our digital marketing strategy was a game-changer. His multilingual SEO expertise helped us expand into new markets.',
+          rating: 5
         },
         {
-          name: "Yuki Tanaka",
-          role: "Founder",
-          company: "Sustainable Fashion House",
-          location: "Tokyo, Japan",
-          image: "yuki",
-          rating: 5,
-          quote: "Overcame language barriers through Mondosol's personalized language courses. Within eight months, I became fluent enough to expand internationally.",
-          results: [
-            "Achieved business-level English fluency",
-            "Expanded to European markets",
-            "Increased international sales by 250%"
-          ],
-          category: "Language & Communication"
+          name: 'Giovanni Bianchi',
+          role: 'School Director',
+          company: 'Rome, Italy',
+          quote: 'Elio\'s teaching methods and AI integration brought our educational programs to the next level. Students are more engaged than ever.',
+          rating: 5
         },
         {
-          name: "Carlos Mendoza",
-          role: "Educational Entrepreneur",
-          company: "Online Learning Platform",
-          location: "Bogotá, Colombia",
-          image: "carlos",
-          rating: 5,
-          quote: "Mastered English through Mondosol's language learning platform. In one year, I advanced my career significantly and expanded my business reach.",
-          results: [
-            "Launched English-language courses",
-            "Student enrollment increased 400%",
-            "Established partnerships in North America"
-          ],
-          category: "Education & Growth"
+          name: 'Anna Larsen',
+          role: 'Entrepreneur',
+          company: 'Bergen, Norway',
+          quote: 'The coaching sessions in Norwegian helped me navigate cultural differences and grow my business internationally. Highly recommended!',
+          rating: 5
         },
         {
-          name: "Maria Andersen-Romano",
-          role: "CEO",
-          company: "Nordic-Mediterranean Consulting",
-          location: "Oslo, Norway",
-          image: "maria",
-          rating: 5,
-          quote: "Credits Mondosol for transforming her cultural heritage into a successful consulting business. The program equipped her with essential tools for international success.",
-          results: [
-            "Built successful consulting practice",
-            "Leveraged multicultural background",
-            "Achieved 6-figure annual revenue"
-          ],
-          category: "Cultural Integration"
+          name: 'Luca Ferrari',
+          role: 'Marketing Manager',
+          company: 'Florence, Italy',
+          quote: 'Elio\'s content strategy and SEO work delivered results beyond our expectations. Our online visibility increased by 250%.',
+          rating: 5
         },
         {
-          name: "Dr. Ahmed Al-Rashid",
-          role: "Medical Practitioner",
-          company: "International Medical Center",
-          location: "Dubai, UAE",
-          image: "ahmed",
-          rating: 5,
-          quote: "Mondosol's communication training was essential for working with international patients. The multilingual approach improved patient care significantly.",
-          results: [
-            "Enhanced patient communication",
-            "Reduced misunderstandings by 80%",
-            "Improved patient satisfaction scores"
-          ],
-          category: "Healthcare Communication"
-        },
-        {
-          name: "Sofia Petrova",
-          role: "CEO",
-          company: "EcoVerde Solutions",
-          location: "Sofia, Bulgaria",
-          image: "sofia",
-          rating: 5,
-          quote: "Mondosol's Business English Coaching helped me effectively communicate with international investors. In six months, I secured major funding rounds.",
-          results: [
-            "Secured €2M in Series A funding",
-            "Established investor relationships",
-            "Expanded to 5 European markets"
-          ],
-          category: "Investment & Funding"
-        },
-        {
-          name: "Ruggero Vasari",
-          role: "Farm Owner",
-          company: "Agriturismo Sicily",
-          location: "Messina, Italy",
-          image: "ruggero",
-          rating: 5,
-          quote: "Transformed our farm hotel near Messina with Mondosol's help, achieving full occupancy and becoming one of Italy's top agritourism destinations.",
-          results: [
-            "Achieved 100% occupancy rate",
-            "Ranked among top agritourism in Italy",
-            "Revenue increased by 400%"
-          ],
-          category: "Tourism & Hospitality"
-        },
-        {
-          name: "Lucia Bianchini",
-          role: "Entrepreneur",
-          company: "Vacation Rental Business",
-          location: "Florence, Italy",
-          image: "lucia",
-          rating: 5,
-          quote: "Mondosol streamlined my vacation rental business reservations, centralized my calendar, and optimized operations for maximum efficiency.",
-          results: [
-            "Streamlined booking process",
-            "Increased booking efficiency by 200%",
-            "Reduced operational overhead by 40%"
-          ],
-          category: "Operations Optimization"
+          name: 'Emma Andersen',
+          role: 'Parent',
+          company: 'Hønefoss, Norway',
+          quote: 'As a kindergarten teacher, Elio brings creativity, patience, and genuine care for children. My daughter loves his classes!',
+          rating: 5
         }
-      ],
-      stats: {
-        title: "Impact by Numbers",
-        items: [
-          { number: "10,000+", label: "People Served", icon: "👥" },
-          { number: "15+", label: "Industries", icon: "🏢" },
-          { number: "25+", label: "Countries", icon: "🌍" },
-          { number: "92%", label: "Success Rate", icon: "📈" },
-          { number: "€2M+", label: "Client Revenue Generated", icon: "💰" },
-          { number: "4.9/5", label: "Average Rating", icon: "⭐" }
-        ]
-      }
+      ]
     },
     it: {
       hero: {
-        title: "STORIE DI SUCCESSO DEI CLIENTI",
-        subtitle: "Trasformazioni Reali, Risultati Reali",
-        description: "Scopri come i miei servizi di coaching e consulenza potenziati dall'IA hanno trasformato aziende e vite in molteplici settori e paesi."
+        title: 'TESTIMONIANZE',
+        subtitle: 'COSA DICONO I CLIENTI',
+        description: 'Feedback reali da clienti reali che hanno raggiunto risultati straordinari.'
       },
       testimonials: [
         {
-          name: "Marco S.",
-          role: "Imprenditore",
-          company: "Startup Tecnologica",
-          location: "Milano, Italia",
-          image: "marco",
-          rating: 5,
-          quote: "Il coaching potenziato dall'IA di Elio ha trasformato la mia startup in difficoltà in un'azienda fiorente. Le sue intuizioni strategiche e l'approccio personalizzato hanno fatto la differenza.",
-          results: [
-            "Fatturato aumentato del 300%",
-            "Produttività del team migliorata del 150%",
-            "Finanziamento Serie A ottenuto con successo"
-          ],
-          category: "Trasformazione Aziendale"
+          name: 'Marco Rossi',
+          role: 'Proprietario Immobiliare',
+          company: 'Milano, Italia',
+          quote: 'Elio ha trasformato il mio business immobiliare. Il fatturato è aumentato del 60% nel primo anno. La sua esperienza nella gestione Airbnb è impareggiabile.',
+          rating: 5
         },
         {
-          name: "Elena R.",
-          role: "Consulente Freelance",
-          company: "Agenzia di Marketing Digitale",
-          location: "Roma, Italia",
-          image: "elena",
-          rating: 5,
-          quote: "Le intuizioni strategiche e l'approccio personalizzato mi hanno aiutato a ridefinire la mia traiettoria professionale. L'esperienza multilingue di Elio ha aperto nuovi mercati per i miei servizi.",
-          results: [
-            "Base clienti espansa internazionalmente",
-            "Fatturato mensile raddoppiato",
-            "Presenza stabilita in 3 nuovi paesi"
-          ],
-          category: "Sviluppo Professionale"
+          name: 'Sarah Johnson',
+          role: 'Imprenditrice',
+          company: 'Oslo, Norvegia',
+          quote: 'Lavorare con Elio sulla nostra strategia di marketing digitale è stato rivoluzionario. La sua esperienza SEO multilingue ci ha aiutato ad espanderci in nuovi mercati.',
+          rating: 5
         },
         {
-          name: "Yuki Tanaka",
-          role: "Fondatrice",
-          company: "Casa di Moda Sostenibile",
-          location: "Tokyo, Giappone",
-          image: "yuki",
-          rating: 5,
-          quote: "Ho superato le barriere linguistiche attraverso i corsi di lingua personalizzati di Mondosol. In otto mesi, sono diventata abbastanza fluente da espandermi internazionalmente.",
-          results: [
-            "Raggiunta fluenza inglese a livello business",
-            "Espansione nei mercati europei",
-            "Vendite internazionali aumentate del 250%"
-          ],
-          category: "Lingua & Comunicazione"
+          name: 'Giovanni Bianchi',
+          role: 'Direttore Scolastico',
+          company: 'Roma, Italia',
+          quote: 'I metodi di insegnamento di Elio e l\'integrazione AI hanno portato i nostri programmi educativi al livello successivo. Gli studenti sono più coinvolti che mai.',
+          rating: 5
         },
         {
-          name: "Carlos Mendoza",
-          role: "Imprenditore Educativo",
-          company: "Piattaforma di Apprendimento Online",
-          location: "Bogotá, Colombia",
-          image: "carlos",
-          rating: 5,
-          quote: "Ho padroneggiato l'inglese attraverso la piattaforma di apprendimento linguistico di Mondosol. In un anno, ho avanzato significativamente la mia carriera ed espanso la portata del mio business.",
-          results: [
-            "Lanciati corsi in lingua inglese",
-            "Iscrizioni studenti aumentate del 400%",
-            "Stabilite partnership in Nord America"
-          ],
-          category: "Educazione & Crescita"
+          name: 'Anna Larsen',
+          role: 'Imprenditrice',
+          company: 'Bergen, Norvegia',
+          quote: 'Le sessioni di coaching in norvegese mi hanno aiutato a navigare le differenze culturali e far crescere il mio business internazionalmente. Altamente raccomandato!',
+          rating: 5
         },
         {
-          name: "Maria Andersen-Romano",
-          role: "CEO",
-          company: "Nordic-Mediterranean Consulting",
-          location: "Oslo, Norvegia",
-          image: "maria",
-          rating: 5,
-          quote: "Attribuisco a Mondosol la trasformazione del mio patrimonio culturale in un business di consulenza di successo. Il programma mi ha fornito strumenti essenziali per il successo internazionale.",
-          results: [
-            "Costruita pratica di consulenza di successo",
-            "Sfruttato background multiculturale",
-            "Raggiunto fatturato annuale a sei cifre"
-          ],
-          category: "Integrazione Culturale"
+          name: 'Luca Ferrari',
+          role: 'Marketing Manager',
+          company: 'Firenze, Italia',
+          quote: 'La strategia di contenuti e il lavoro SEO di Elio hanno portato risultati oltre le nostre aspettative. La nostra visibilità online è aumentata del 250%.',
+          rating: 5
         },
         {
-          name: "Dr. Ahmed Al-Rashid",
-          role: "Medico",
-          company: "Centro Medico Internazionale",
-          location: "Dubai, EAU",
-          image: "ahmed",
-          rating: 5,
-          quote: "La formazione sulla comunicazione di Mondosol è stata essenziale per lavorare con pazienti internazionali. L'approccio multilingue ha migliorato significativamente l'assistenza ai pazienti.",
-          results: [
-            "Migliorata comunicazione con i pazienti",
-            "Ridotti malintesi dell'80%",
-            "Migliorati punteggi di soddisfazione dei pazienti"
-          ],
-          category: "Comunicazione Sanitaria"
-        },
-        {
-          name: "Sofia Petrova",
-          role: "CEO",
-          company: "EcoVerde Solutions",
-          location: "Sofia, Bulgaria",
-          image: "sofia",
-          rating: 5,
-          quote: "Il Business English Coaching di Mondosol mi ha aiutato a comunicare efficacemente con investitori internazionali. In sei mesi, ho ottenuto importanti round di finanziamento.",
-          results: [
-            "Ottenuti €2M in finanziamento Serie A",
-            "Stabilite relazioni con investitori",
-            "Espansione in 5 mercati europei"
-          ],
-          category: "Investimenti & Finanziamenti"
-        },
-        {
-          name: "Ruggero Vasari",
-          role: "Proprietario Fattoria",
-          company: "Agriturismo Sicilia",
-          location: "Messina, Italia",
-          image: "ruggero",
-          rating: 5,
-          quote: "Abbiamo trasformato il nostro agriturismo vicino a Messina con l'aiuto di Mondosol, raggiungendo il tutto esaurito e diventando una delle migliori destinazioni agrituristiche d'Italia.",
-          results: [
-            "Raggiunto tasso di occupazione del 100%",
-            "Classificato tra i migliori agriturismi in Italia",
-            "Fatturato aumentato del 400%"
-          ],
-          category: "Turismo & Ospitalità"
-        },
-        {
-          name: "Lucia Bianchini",
-          role: "Imprenditrice",
-          company: "Attività Affitti Vacanze",
-          location: "Firenze, Italia",
-          image: "lucia",
-          rating: 5,
-          quote: "Mondosol ha semplificato le prenotazioni della mia attività di affitti vacanze, centralizzato il mio calendario e ottimizzato le operazioni per la massima efficienza.",
-          results: [
-            "Semplificato processo di prenotazione",
-            "Efficienza prenotazioni aumentata del 200%",
-            "Ridotti costi operativi del 40%"
-          ],
-          category: "Ottimizzazione Operazioni"
+          name: 'Emma Andersen',
+          role: 'Genitore',
+          company: 'Hønefoss, Norvegia',
+          quote: 'Come insegnante di scuola materna, Elio porta creatività, pazienza e genuina cura per i bambini. Mia figlia adora le sue lezioni!',
+          rating: 5
         }
-      ],
-      stats: {
-        title: "Impatto in Numeri",
-        items: [
-          { number: "10.000+", label: "Persone Servite", icon: "👥" },
-          { number: "15+", label: "Settori", icon: "🏢" },
-          { number: "25+", label: "Paesi", icon: "🌍" },
-          { number: "92%", label: "Tasso di Successo", icon: "📈" },
-          { number: "€2M+", label: "Fatturato Clienti Generato", icon: "💰" },
-          { number: "4.9/5", label: "Valutazione Media", icon: "⭐" }
-        ]
-      }
+      ]
     },
     no: {
       hero: {
-        title: "KLIENT SUKSESSHISTORIER",
-        subtitle: "Ekte Transformasjoner, Ekte Resultater",
-        description: "Oppdag hvordan mine AI-drevne coaching- og konsulenttjenester har transformert virksomheter og liv på tvers av flere bransjer og land."
+        title: 'ANBEFALINGER',
+        subtitle: 'HVA KLIENTER SIER',
+        description: 'Ekte tilbakemeldinger fra ekte klienter som oppnådde ekstraordinære resultater.'
       },
       testimonials: [
         {
-          name: "Marco S.",
-          role: "Entreprenør",
-          company: "Tech Startup",
-          location: "Milano, Italia",
-          image: "marco",
-          rating: 5,
-          quote: "Elios AI-drevne coaching transformerte min slitende startup til en blomstrende virksomhet. Hans strategiske innsikter og personlige tilnærming gjorde all forskjellen.",
-          results: [
-            "Inntekt økte med 300%",
-            "Teamproduktivitet forbedret med 150%",
-            "Vellykket sikret Serie A finansiering"
-          ],
-          category: "Virksomhetstransformasjon"
+          name: 'Marco Rossi',
+          role: 'Eiendomseier',
+          company: 'Milano, Italia',
+          quote: 'Elio transformerte eiendomsvirksomheten min. Inntektene økte med 60% det første året. Hans ekspertise innen Airbnb-forvaltning er uovertruffen.',
+          rating: 5
         },
         {
-          name: "Elena R.",
-          role: "Frilans Konsulent",
-          company: "Digital Markedsføringsbyrå",
-          location: "Roma, Italia",
-          image: "elena",
-          rating: 5,
-          quote: "De strategiske innsiktene og personlige tilnærmingen hjalp meg å omdefinere min profesjonelle bane. Elios flerspåklige ekspertise åpnet nye markeder for mine tjenester.",
-          results: [
-            "Klientbase utvidet internasjonalt",
-            "Månedlig inntekt doblet",
-            "Etablert tilstedeværelse i 3 nye land"
-          ],
-          category: "Profesjonell Utvikling"
+          name: 'Sarah Johnson',
+          role: 'Bedriftseier',
+          company: 'Oslo, Norge',
+          quote: 'Å jobbe med Elio på vår digitale markedsføringsstrategi var en game-changer. Hans flerspråklige SEO-ekspertise hjalp oss med å ekspandere til nye markeder.',
+          rating: 5
         },
         {
-          name: "Yuki Tanaka",
-          role: "Grunnlegger",
-          company: "Bærekraftig Motehus",
-          location: "Tokyo, Japan",
-          image: "yuki",
-          rating: 5,
-          quote: "Overvant språkbarrierer gjennom Mondosols personlige språkkurs. Innen åtte måneder ble jeg flytende nok til å ekspandere internasjonalt.",
-          results: [
-            "Oppnådde forretningsnivå engelsk flytenhet",
-            "Ekspanderte til europeiske markeder",
-            "Internasjonalt salg økte med 250%"
-          ],
-          category: "Språk & Kommunikasjon"
+          name: 'Giovanni Bianchi',
+          role: 'Skoledirektør',
+          company: 'Roma, Italia',
+          quote: 'Elios undervisningsmetoder og AI-integrering tok våre utdanningsprogrammer til neste nivå. Elevene er mer engasjerte enn noensinne.',
+          rating: 5
         },
         {
-          name: "Carlos Mendoza",
-          role: "Pedagogisk Entreprenør",
-          company: "Online Læringsplattform",
-          location: "Bogotá, Colombia",
-          image: "carlos",
-          rating: 5,
-          quote: "Mestret engelsk gjennom Mondosols språklæringsplattform. På ett år avanserte jeg karrieren min betydelig og utvidet min virksomhetsrekkevidde.",
-          results: [
-            "Lanserte engelskspåklige kurs",
-            "Studentpåmelding økte 400%",
-            "Etablerte partnerskap i Nord-Amerika"
-          ],
-          category: "Utdanning & Vekst"
+          name: 'Anna Larsen',
+          role: 'Entreprenør',
+          company: 'Bergen, Norge',
+          quote: 'Coachingøktene på norsk hjalp meg med å navigere kulturelle forskjeller og vokse virksomheten min internasjonalt. Anbefales på det sterkeste!',
+          rating: 5
         },
         {
-          name: "Maria Andersen-Romano",
-          role: "CEO",
-          company: "Nordic-Mediterranean Consulting",
-          location: "Oslo, Norge",
-          image: "maria",
-          rating: 5,
-          quote: "Krediterer Mondosol for å transformere min kulturelle arv til en vellykket konsulentvirksomhet. Programmet utstyrte meg med essensielle verktøy for internasjonal suksess.",
-          results: [
-            "Bygde vellykket konsulentpraksis",
-            "Utnyttet flerkulturell bakgrunn",
-            "Oppnådde 6-sifret årlig inntekt"
-          ],
-          category: "Kulturell Integrasjon"
+          name: 'Luca Ferrari',
+          role: 'Markedssjef',
+          company: 'Firenze, Italia',
+          quote: 'Elios innholdsstrategi og SEO-arbeid leverte resultater utover våre forventninger. Vår online synlighet økte med 250%.',
+          rating: 5
         },
         {
-          name: "Dr. Ahmed Al-Rashid",
-          role: "Medisinsk Utøver",
-          company: "Internasjonalt Medisinsk Senter",
-          location: "Dubai, UAE",
-          image: "ahmed",
-          rating: 5,
-          quote: "Mondosols kommunikasjonstrening var essensiell for å jobbe med internasjonale pasienter. Den flerspåklige tilnærmingen forbedret pasientbehandlingen betydelig.",
-          results: [
-            "Forbedret pasientkommunikasjon",
-            "Reduserte misforståelser med 80%",
-            "Forbedret pasienttilfredshetsscore"
-          ],
-          category: "Helsekommunikasjon"
-        },
-        {
-          name: "Sofia Petrova",
-          role: "CEO",
-          company: "EcoVerde Solutions",
-          location: "Sofia, Bulgaria",
-          image: "sofia",
-          rating: 5,
-          quote: "Mondosols Business English Coaching hjalp meg å kommunisere effektivt med internasjonale investorer. På seks måneder sikret jeg store finansieringsrunder.",
-          results: [
-            "Sikret €2M i Serie A finansiering",
-            "Etablerte investorrelasjoner",
-            "Ekspanderte til 5 europeiske markeder"
-          ],
-          category: "Investering & Finansiering"
-        },
-        {
-          name: "Ruggero Vasari",
-          role: "Gårdseier",
-          company: "Agriturismo Sicilia",
-          location: "Messina, Italia",
-          image: "ruggero",
-          rating: 5,
-          quote: "Transformerte gårdshotellet vårt nær Messina med Mondosols hjelp, oppnådde full belegg og ble en av Italias topp agriturisme-destinasjoner.",
-          results: [
-            "Oppnådde 100% beleggsprosent",
-            "Rangert blant topp agriturisme i Italia",
-            "Inntekt økte med 400%"
-          ],
-          category: "Turisme & Gjestfrihet"
-        },
-        {
-          name: "Lucia Bianchini",
-          role: "Entreprenør",
-          company: "Ferieutleievirksomhet",
-          location: "Firenze, Italia",
-          image: "lucia",
-          rating: 5,
-          quote: "Mondosol effektiviserte ferieutleievirksomhetens reservasjoner, sentraliserte kalenderen min og optimaliserte driften for maksimal effektivitet.",
-          results: [
-            "Effektiviserte bookingprosess",
-            "Bookingeffektivitet økte med 200%",
-            "Reduserte driftskostnader med 40%"
-          ],
-          category: "Driftsoptimalisering"
+          name: 'Emma Andersen',
+          role: 'Forelder',
+          company: 'Hønefoss, Norge',
+          quote: 'Som barnehagelærer bringer Elio kreativitet, tålmodighet og ekte omsorg for barn. Datteren min elsker timene hans!',
+          rating: 5
         }
-      ],
-      stats: {
-        title: "Påvirkning i Tall",
-        items: [
-          { number: "10 000+", label: "Personer Betjent", icon: "👥" },
-          { number: "15+", label: "Bransjer", icon: "🏢" },
-          { number: "25+", label: "Land", icon: "🌍" },
-          { number: "92%", label: "Suksessrate", icon: "📈" },
-          { number: "€2M+", label: "Klientinntekt Generert", icon: "💰" },
-          { number: "4.9/5", label: "Gjennomsnittlig Vurdering", icon: "⭐" }
-        ]
-      }
+      ]
     }
   }
 
-  const currentContent = content[language]
+  const t = content[language]
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen bg-black text-white pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="text-yellow-400/10"
+          >
+            <Quote className="w-[40vw] h-[40vw]" />
+          </motion.div>
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-5xl md:text-7xl font-black mb-6 text-yellow-400"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-yellow-400 mb-6">
-              {currentContent.hero.title}
-            </h1>
-            <h2 className="text-2xl md:text-3xl text-white mb-6">
-              {currentContent.hero.subtitle}
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              {currentContent.hero.description}
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+            {t.hero.subtitle}
+          </motion.h2>
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl text-gray-300"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              {currentContent.stats.title}
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {currentContent.stats.items.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-all duration-300"
-              >
-                <div className="text-3xl mb-3">{stat.icon}</div>
-                <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-base md:text-lg text-gray-300">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+            {t.hero.description}
+          </motion.p>
         </div>
       </section>
 
       {/* Testimonials Grid */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {currentContent.testimonials.map((testimonial, index) => (
+      <section className="py-32 bg-black">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8">
+            {t.testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gray-900 p-8 rounded-xl border border-gray-800 hover:border-yellow-400/30 transition-all duration-300 group"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group p-8 md:p-10 border-2 border-white/10 hover:border-yellow-400 transition-all duration-300 rounded-lg"
               >
-                {/* Header */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center text-black font-bold text-lg mr-4">
-                      {testimonial.name.charAt(0)}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white">{testimonial.name}</h3>
-                      <p className="text-base text-gray-400">{testimonial.role}</p>
-                    </div>
-                  </div>
-                  <div className="flex">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Category */}
-                <div className="mb-4">
-                  <span className="text-yellow-400 text-xs font-semibold uppercase tracking-wide">
-                    {testimonial.category}
-                  </span>
+                {/* Stars */}
+                <div className="flex gap-1 mb-6">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
                 </div>
 
                 {/* Quote */}
-                <div className="mb-6">
-                  <Quote className="w-6 h-6 text-yellow-400 mb-3" />
-                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed italic">
-                    "{testimonial.quote}"
-                  </p>
-                </div>
+                <Quote className="w-12 h-12 text-yellow-400/20 mb-4" />
+                <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed italic">
+                  "{testimonial.quote}"
+                </p>
 
-                {/* Company & Location */}
-                <div className="mb-6 space-y-2">
-                  <div className="flex items-center text-gray-400 text-sm">
-                    <Briefcase className="w-4 h-4 mr-2" />
+                {/* Author */}
+                <div className="border-t border-white/10 pt-6">
+                  <div className="font-bold text-xl text-yellow-400 mb-1">
+                    {testimonial.name}
+                  </div>
+                  <div className="text-sm text-gray-400">
+                    {testimonial.role}
+                  </div>
+                  <div className="text-sm text-gray-500">
                     {testimonial.company}
                   </div>
-                  <div className="flex items-center text-gray-400 text-sm">
-                    <MapPin className="w-4 h-4 mr-2" />
-                    {testimonial.location}
-                  </div>
-                </div>
-
-                {/* Results */}
-                <div>
-                  <h4 className="text-white font-semibold mb-3">Key Results:</h4>
-                  <ul className="space-y-2">
-                    {testimonial.results.map((result, resultIndex) => (
-                      <li key={resultIndex} className="flex items-center text-gray-300 text-sm">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3 flex-shrink-0"></div>
-                        {result}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Featured Success Story */}
-      <section className="py-20 bg-gradient-to-r from-yellow-400 to-yellow-500">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-center text-black"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              "From €150k Loss to Breakthrough Success"
-            </h2>
-            <div className="max-w-4xl mx-auto">
-              <p className="text-xl mb-8 leading-relaxed">
-                My own transformation story is proof that setbacks can become setups for incredible comebacks. 
-                After losing €150k, I rebuilt stronger than ever, creating a thriving AI-powered coaching business 
-                that has helped hundreds of clients achieve their own breakthrough results.
-              </p>
-              <div className="grid md:grid-cols-3 gap-8 mb-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold mb-2">€150k</div>
-                  <div className="text-sm">Initial Loss</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold mb-2">12 Months</div>
-                  <div className="text-sm">Recovery Time</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold mb-2">300%</div>
-                  <div className="text-sm">Growth Achieved</div>
-                </div>
-              </div>
-              <p className="text-lg italic">
-                "Every challenge is an opportunity for growth. Let me help you write your success story."
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Join These Success Stories?
-            </h2>
-            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Transform your challenges into opportunities. Start your journey to breakthrough success with personalized AI-powered coaching.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                asChild
-                size="lg"
-                className="bg-yellow-400 text-black hover:bg-yellow-300 font-semibold text-lg px-8 py-6"
-              >
-                <a href="https://mondosol.com/coaching" target="_blank" rel="noopener noreferrer">
-                  Book Your Consultation
-                </a>
-              </Button>
-              
-              <Button 
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black font-semibold text-lg px-8 py-6"
-              >
-                <a href="/services">
-                  Explore Services
-                </a>
-              </Button>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>

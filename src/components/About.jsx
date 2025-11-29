@@ -1,451 +1,290 @@
 import { motion } from 'framer-motion'
-import { Calendar, MapPin, Award, BookOpen, Users, Globe } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { MapPin, Award, Globe } from 'lucide-react'
 
 // Timeline images
-import babyPhoto from '../assets/1735828571062-bd9249cc-eeda-4a47-9363-a20976690d17_.jpg'
-import universityPhoto from '../assets/100_0349.JPG'
-import erasmusPhoto from '../assets/grenoble.jpg'
-import masterPhoto from '../assets/100_0347.JPG'
 import teachingPhoto from '../assets/IMG_20250706_154109459_HDR_PORTRAIT.jpg'
 import airbnbPhoto from '../assets/IMG_20250610_104440397_HDR_PORTRAIT.jpg'
 import norwayPhoto from '../assets/IMG_20250710_113431773_HDR_PORTRAIT.jpg'
-import aiCoachingPhoto from '../assets/IMG_20250709_132004267_HDR_PORTRAIT.jpg'
-import currentPhoto from '../assets/IMG_20250710_110800777_HDR_PORTRAIT.jpg'
 
 const About = ({ language }) => {
   const content = {
     en: {
       hero: {
-        title: "ELIO'S STORY",
-        subtitle: "From Abbiategrasso to the World",
-        description: "A journey of resilience, innovation, and transformation across six countries and multiple industries."
+        title: 'ABOUT',
+        subtitle: 'ELIO',
+        tagline: 'FROM MILAN TO THE WORLD',
+        description: 'A journey of transformation, innovation, and impact across 6 countries, 15+ years, and multiple industries.'
       },
-      timeline: [
-        {
-          year: "1978",
-          title: "Born in Abbiategrasso",
-          location: "Milan, Italy",
-          description: "Born on October 1, 1978, in Abbiategrasso, Milan, Italy. Growing up in a vibrant Italian culture that values family, hard work, and entrepreneurial spirit.",
-          icon: "👶",
-          image: babyPhoto
-        },
-        {
-          year: "1996-2002",
-          title: "University Education",
-          location: "Italy",
-          description: "Pursued higher education in Italy, developing a strong foundation in business and international relations that would shape future career paths.",
-          icon: "📚",
-          image: universityPhoto
-        },
-        {
-          year: "2003-2004",
-          title: "Erasmus Exchange Program",
-          location: "Sciences Po Grenoble, France",
-          description: "Studied Public Administration through the European Union Exchange Program, developing multicultural perspectives and international networking skills.",
-          icon: "🌍",
-          image: erasmusPhoto
-        },
-        {
-          year: "2005-2006",
-          title: "Master's in Project Management",
-          location: "Università degli Studi di Milano, Italy",
-          description: "Completed Master of Arts in Project Management with internship at ISTUD business school, laying the foundation for strategic thinking and business leadership.",
-          icon: "🎓",
-          image: masterPhoto
-        },
-        {
-          year: "2009-2014",
-          title: "Educational Leadership",
-          location: "Italy & Norway",
-          description: "Started as English Language Teacher, evolved into Educational Leadership Consultant. Founded Mondelio, a non-profit with 300+ members offering free courses.",
-          icon: "👨‍🏫",
-          image: teachingPhoto
-        },
-        {
-          year: "2013-2023",
-          title: "Property Management Success",
-          location: "Italy",
-          description: "Built and managed 200+ short-term rental listings, achieving Top 3 ranking nationally (Confederalberghi) on Airbnb platform with significant revenue growth.",
-          icon: "🏠",
-          image: airbnbPhoto
-        },
-        {
-          year: "Since 2022",
-          title: "AI-Powered Coaching",
-          location: "Global",
-          description: "Launched Mondosol coaching business, integrating 12 AI virtual assistants to provide personalized coaching in 4 languages across multiple industries.",
-          icon: "🤖",
-          image: aiCoachingPhoto
-        },
-        {
-          year: "Since 2023",
-          title: "Life in Norway",
-          location: "Hønefoss, Norway",
-          description: "Working as Kindergarten Teacher and Substitute Teacher while expanding coaching business internationally, bridging education and entrepreneurship.",
-          icon: "🎿",
-          image: norwayPhoto
-        },
-        {
-          year: "2025",
-          title: "Digital Transformation Specialist",
-          location: "Norway & Global",
-          description: "Focusing on content marketing, SEO, and multilingual digital strategies. Helping businesses transform through AI integration and digital innovation.",
-          icon: "💻",
-          image: currentPhoto
-        }
-      ],
-      philosophy: {
-        title: "My Philosophy",
-        subtitle: "Transformation Through Technology and Human Connection",
-        points: [
+      story: {
+        title: 'MY STORY',
+        paragraphs: [
+          'Born in Abbiategrasso, Milan in 1978, I grew up immersed in Italian entrepreneurial culture. From an early age, I understood that success comes from combining passion with strategic thinking.',
+          'My journey took me across Europe—from studying Public Administration at Sciences Po Grenoble to building educational platforms in Italy and Norway. Each experience shaped my unique approach to business and education.',
+          'Today, I help entrepreneurs and businesses scale through education, multilingual marketing, and property management expertise. With 250+ properties managed, €150K+ in revenue, and coaching clients across 4 languages, I bridge cultures and industries to create extraordinary results.'
+        ]
+      },
+      highlights: {
+        title: 'KEY ACHIEVEMENTS',
+        items: [
           {
-            title: "Resilience Through Adversity",
-            description: "Every setback is a setup for a comeback. My €150k loss taught me that failure is not the opposite of success—it's a stepping stone to it.",
-            icon: "💪"
+            number: '250+',
+            label: 'PROPERTIES MANAGED',
+            description: 'Top 3 Airbnb host in Italy'
           },
           {
-            title: "AI-Human Synergy",
-            description: "Technology amplifies human potential. By combining AI tools with personalized coaching, we can achieve unprecedented results in personal and business transformation.",
-            icon: "🔗"
+            number: '€150K+',
+            label: 'ANNUAL REVENUE',
+            description: 'Property management success'
           },
           {
-            title: "Multicultural Advantage",
-            description: "Speaking 4 languages and living in 6 countries has taught me that diversity of perspective is the key to innovative solutions and global success.",
-            icon: "🌐"
+            number: '6',
+            label: 'COUNTRIES',
+            description: 'International experience'
           },
           {
-            title: "Continuous Learning",
-            description: "From teaching to property management to AI coaching, I believe in constantly evolving and adapting to new challenges and opportunities.",
-            icon: "📈"
+            number: '4',
+            label: 'LANGUAGES',
+            description: 'Multilingual coaching'
+          },
+          {
+            number: '15+',
+            label: 'YEARS',
+            description: 'Industry expertise'
+          },
+          {
+            number: '300+',
+            label: 'MEMBERS',
+            description: 'Mondelio non-profit community'
           }
         ]
       },
-      achievements: {
-        title: "Key Achievements",
-        items: [
-          { label: "Top 3 Airbnb Host", value: "Italy National Ranking", icon: "🏆" },
-          { label: "Properties Managed", value: "250+ Listings", icon: "🏠" },
-          { label: "Annual Revenue", value: "€150k+", icon: "💰" },
-          { label: "Languages Spoken", value: "4 Fluently", icon: "🗣️" },
-          { label: "AI Assistants", value: "12 Active", icon: "🤖" },
-          { label: "Years Experience", value: "20+ International", icon: "📅" },
-          { label: "Industries Served", value: "10+ Different", icon: "🏢" },
-          { label: "Countries Lived", value: "6 (Italy, England, Ireland, USA, France, Norway)", icon: "🌍" }
-        ]
+      philosophy: {
+        title: 'MY PHILOSOPHY',
+        quote: 'TRANSFORMATION THROUGH EDUCATION, INNOVATION, AND HUMAN CONNECTION',
+        description: 'I believe in empowering individuals and businesses to achieve their full potential. By combining cutting-edge technology with timeless human values, we create sustainable success that transcends borders and industries.'
       }
     },
     it: {
       hero: {
-        title: "LA STORIA DI ELIO",
-        subtitle: "Da Abbiategrasso al Mondo",
-        description: "Un viaggio di resilienza, innovazione e trasformazione attraverso tre paesi e molteplici settori."
+        title: 'CHI SONO',
+        subtitle: 'ELIO',
+        tagline: 'DA MILANO AL MONDO',
+        description: 'Un viaggio di trasformazione, innovazione e impatto attraverso 6 paesi, 15+ anni e molteplici settori.'
       },
-      timeline: [
-        {
-          year: "1978",
-          title: "Nato ad Abbiategrasso",
-          location: "Milano, Italia",
-          description: "Nato il 1° ottobre 1978 ad Abbiategrasso, Milano, Italia. Cresciuto in una vibrante cultura italiana che valorizza la famiglia, il duro lavoro e lo spirito imprenditoriale.",
-          icon: "👶",
-          image: babyPhoto
-        },
-        {
-          year: "1996-2002",
-          title: "Formazione Universitaria",
-          location: "Italia",
-          description: "Ha perseguito l'istruzione superiore in Italia, sviluppando una solida base in business e relazioni internazionali che avrebbe plasmato i futuri percorsi di carriera.",
-          icon: "📚",
-          image: universityPhoto
-        },
-        {
-          year: "2003-2004",
-          title: "Programma Erasmus",
-          location: "Sciences Po Grenoble, Francia",
-          description: "Ha studiato Amministrazione Pubblica attraverso il Programma di Scambio dell'Unione Europea, sviluppando prospettive multiculturali e competenze di networking internazionale.",
-          icon: "🌍",
-          image: erasmusPhoto
-        },
-        {
-          year: "2005-2006",
-          title: "Master in Project Management",
-          location: "Università degli Studi di Milano, Italia",
-          description: "Ha completato il Master in Project Management con stage presso la business school ISTUD, ponendo le basi per il pensiero strategico e la leadership aziendale.",
-          icon: "🎓",
-          image: masterPhoto
-        },
-        {
-          year: "2009-2014",
-          title: "Leadership Educativa",
-          location: "Italia e Norvegia",
-          description: "Ha iniziato come insegnante di lingua inglese, evolvendosi in consulente di leadership educativa. Ha fondato Mondelio, un'organizzazione no-profit con oltre 300 membri che offre corsi gratuiti.",
-          icon: "👨‍🏫",
-          image: teachingPhoto
-        },
-        {
-          year: "2010-2023",
-          title: "Impero Gestione Immobiliare",
-          location: "Italia",
-          description: "Ha costruito e gestito oltre 250 annunci di affitti brevi, raggiungendo il Top 3 della classifica nazionale su Airbnb con oltre €150k di fatturato annuale.",
-          icon: "🏠",
-          image: airbnbPhoto
-        },
-        {
-          year: "Dal 2022",
-          title: "Coaching con l'Intelligenza Artificiale",
-          location: "Globale",
-          description: "Ha lanciato il business di coaching Mondosol, integrando 12 assistenti virtuali IA per fornire coaching personalizzato in 4 lingue attraverso molteplici settori.",
-          icon: "🤖",
-          image: aiCoachingPhoto
-        },
-        {
-          year: "Dal 2023",
-          title: "Vita in Norvegia",
-          location: "Hønefoss, Norvegia",
-          description: "Lavora come insegnante di scuola materna e supplente mentre espande il business di coaching a livello internazionale, collegando educazione e imprenditorialità.",
-          icon: "🎿",
-          image: norwayPhoto
-        },
-        {
-          year: "2025",
-          title: "Specialista Trasformazione Digitale",
-          location: "Norvegia e Globale",
-          description: "Si concentra su content marketing, SEO e strategie digitali multilingue. Aiuta le aziende a trasformarsi attraverso l'integrazione dell'IA e l'innovazione digitale.",
-          icon: "💻",
-          image: currentPhoto
-        }
-      ],
-      philosophy: {
-        title: "La Mia Filosofia",
-        subtitle: "Trasformazione Attraverso Tecnologia e Connessione Umana",
-        points: [
+      story: {
+        title: 'LA MIA STORIA',
+        paragraphs: [
+          'Nato ad Abbiategrasso, Milano nel 1978, sono cresciuto immerso nella cultura imprenditoriale italiana. Fin da piccolo ho capito che il successo deriva dalla combinazione di passione e pensiero strategico.',
+          'Il mio viaggio mi ha portato attraverso l\'Europa—dallo studio di Pubblica Amministrazione a Sciences Po Grenoble alla costruzione di piattaforme educative in Italia e Norvegia. Ogni esperienza ha plasmato il mio approccio unico al business e all\'educazione.',
+          'Oggi aiuto imprenditori e aziende a crescere attraverso educazione, marketing multilingue ed esperienza nella gestione immobiliare. Con oltre 250 proprietà gestite, €150K+ di fatturato e clienti di coaching in 4 lingue, collego culture e settori per creare risultati straordinari.'
+        ]
+      },
+      highlights: {
+        title: 'RISULTATI CHIAVE',
+        items: [
           {
-            title: "Resilienza Attraverso le Avversità",
-            description: "Ogni battuta d'arresto è una preparazione per un ritorno. La mia perdita di €150k mi ha insegnato che il fallimento non è l'opposto del successo—è un trampolino di lancio verso di esso.",
-            icon: "💪"
+            number: '250+',
+            label: 'PROPRIETÀ GESTITE',
+            description: 'Top 3 host Airbnb in Italia'
           },
           {
-            title: "Sinergia IA-Umano",
-            description: "La tecnologia amplifica il potenziale umano. Combinando strumenti IA con coaching personalizzato, possiamo ottenere risultati senza precedenti nella trasformazione personale e aziendale.",
-            icon: "🔗"
+            number: '€150K+',
+            label: 'FATTURATO ANNUO',
+            description: 'Successo gestione immobiliare'
           },
           {
-            title: "Vantaggio Multiculturale",
-            description: "Parlare 4 lingue e vivere in 3 paesi mi ha insegnato che la diversità di prospettiva è la chiave per soluzioni innovative e successo globale.",
-            icon: "🌐"
+            number: '6',
+            label: 'PAESI',
+            description: 'Esperienza internazionale'
           },
           {
-            title: "Apprendimento Continuo",
-            description: "Dall'insegnamento alla gestione immobiliare al coaching IA, credo nel costante evolversi e adattarsi a nuove sfide e opportunità.",
-            icon: "📈"
+            number: '4',
+            label: 'LINGUE',
+            description: 'Coaching multilingue'
+          },
+          {
+            number: '15+',
+            label: 'ANNI',
+            description: 'Esperienza nel settore'
+          },
+          {
+            number: '300+',
+            label: 'MEMBRI',
+            description: 'Comunità non-profit Mondelio'
           }
         ]
       },
-      achievements: {
-        title: "Risultati Chiave",
-        items: [
-          { label: "Top 3 Host Airbnb", value: "Classifica Nazionale Italia", icon: "🏆" },
-          { label: "Proprietà Gestite", value: "250+ Annunci", icon: "🏠" },
-          { label: "Fatturato Annuale", value: "€150k+", icon: "💰" },
-          { label: "Lingue Parlate", value: "4 Fluentemente", icon: "🗣️" },
-          { label: "Assistenti IA", value: "12 Attivi", icon: "🤖" },
-          { label: "Anni di Esperienza", value: "20+ Internazionali", icon: "📅" },
-          { label: "Settori Serviti", value: "10+ Diversi", icon: "🏢" },
-          { label: "Paesi Vissuti", value: "3 (Italia, Francia, Norvegia)", icon: "🌍" }
-        ]
+      philosophy: {
+        title: 'LA MIA FILOSOFIA',
+        quote: 'TRASFORMAZIONE ATTRAVERSO EDUCAZIONE, INNOVAZIONE E CONNESSIONE UMANA',
+        description: 'Credo nel potenziare individui e aziende per raggiungere il loro pieno potenziale. Combinando tecnologia all\'avanguardia con valori umani senza tempo, creiamo successo sostenibile che trascende confini e settori.'
       }
     },
     no: {
       hero: {
-        title: "ELIOS HISTORIE",
-        subtitle: "Fra Abbiategrasso til Verden",
-        description: "En reise av motstandskraft, innovasjon og transformasjon på tvers av tre land og flere bransjer."
+        title: 'OM MEG',
+        subtitle: 'ELIO',
+        tagline: 'FRA MILANO TIL VERDEN',
+        description: 'En reise av transformasjon, innovasjon og påvirkning på tvers av 6 land, 15+ år og flere bransjer.'
       },
-      timeline: [
-        {
-          year: "1978",
-          title: "Født i Abbiategrasso",
-          location: "Milano, Italia",
-          description: "Født 1. oktober 1978 i Abbiategrasso, Milano, Italia. Vokste opp i en levende italiensk kultur som verdsetter familie, hardt arbeid og entreprenørånd.",
-          icon: "👶",
-          image: babyPhoto
-        },
-        {
-          year: "1996-2002",
-          title: "Universitetsutdanning",
-          location: "Italia",
-          description: "Tok høyere utdanning i Italia, utviklet et sterkt grunnlag i business og internasjonale relasjoner som ville forme fremtidige karriereveier.",
-          icon: "📚",
-          image: universityPhoto
-        },
-        {
-          year: "2003-2004",
-          title: "Erasmus Utvekslingsprogram",
-          location: "Sciences Po Grenoble, Frankrike",
-          description: "Studerte offentlig administrasjon gjennom Den Europeiske Unions utvekslingsprogram, utviklet multikulturelle perspektiver og internasjonale nettverksferdigheter.",
-          icon: "🌍",
-          image: erasmusPhoto
-        },
-        {
-          year: "2005-2006",
-          title: "Master i Prosjektledelse",
-          location: "Università degli Studi di Milano, Italia",
-          description: "Fullførte Master i Prosjektledelse med praktikum ved ISTUD handelshøyskole, la grunnlaget for strategisk tenkning og forretningsledelse.",
-          icon: "🎓",
-          image: masterPhoto
-        },
-        {
-          year: "2009-2014",
-          title: "Pedagogisk Lederskap",
-          location: "Italia og Norge",
-          description: "Startet som engelsklærer, utviklet seg til pedagogisk ledelseskonsulent. Grunnla Mondelio, en ideell organisasjon med 300+ medlemmer som tilbyr gratis kurs.",
-          icon: "👨‍🏫",
-          image: teachingPhoto
-        },
-        {
-          year: "2010-2023",
-          title: "Eiendomsforvaltningsimperium",
-          location: "Italia",
-          description: "Bygget og forvaltet 250+ korttidsutleie annonser, oppnådde Top 3 rangering nasjonalt på Airbnb-plattformen med €150k+ årlig inntekt.",
-          icon: "🏠",
-          image: airbnbPhoto
-        },
-        {
-          year: "Fra 2022",
-          title: "AI-Drevet Coaching",
-          location: "Global",
-          description: "Lanserte Mondosol coaching-virksomhet, integrerte 12 AI virtuelle assistenter for å gi personlig coaching på 4 språk på tvers av flere bransjer.",
-          icon: "🤖",
-          image: aiCoachingPhoto
-        },
-        {
-          year: "Fra 2023",
-          title: "Liv i Norge",
-          location: "Hønefoss, Norge",
-          description: "Jobber som barnehagelærer og vikar mens han utvider coaching-virksomheten internasjonalt, brobygger mellom utdanning og entreprenørskap.",
-          icon: "🎿",
-          image: norwayPhoto
-        },
-        {
-          year: "2025",
-          title: "Digital Transformasjonsspesialist",
-          location: "Norge og Global",
-          description: "Fokuserer på innholdsmarkedsføring, SEO og flerspråklige digitale strategier. Hjelper bedrifter med å transformere gjennom AI-integrasjon og digital innovasjon.",
-          icon: "💻",
-          image: currentPhoto
-        }
-      ],
-      philosophy: {
-        title: "Min Filosofi",
-        subtitle: "Transformasjon Gjennom Teknologi og Menneskelig Forbindelse",
-        points: [
+      story: {
+        title: 'MIN HISTORIE',
+        paragraphs: [
+          'Født i Abbiategrasso, Milano i 1978, vokste jeg opp nedsenket i italiensk gründerkultur. Fra tidlig alder forsto jeg at suksess kommer fra å kombinere lidenskap med strategisk tenkning.',
+          'Min reise tok meg over Europa—fra å studere offentlig administrasjon ved Sciences Po Grenoble til å bygge utdanningsplattformer i Italia og Norge. Hver erfaring formet min unike tilnærming til business og utdanning.',
+          'I dag hjelper jeg gründere og bedrifter med å vokse gjennom utdanning, flerspråklig markedsføring og eiendomsforvaltningsekspertise. Med 250+ eiendommer forvaltet, €150K+ i inntekt og coachingklienter på tvers av 4 språk, bygger jeg bro mellom kulturer og bransjer for å skape ekstraordinære resultater.'
+        ]
+      },
+      highlights: {
+        title: 'NØKKELPRESTASJONER',
+        items: [
           {
-            title: "Motstandskraft Gjennom Motgang",
-            description: "Hvert tilbakeslag er en forberedelse til et comeback. Mitt €150k tap lærte meg at fiasko ikke er det motsatte av suksess—det er et springbrett til det.",
-            icon: "💪"
+            number: '250+',
+            label: 'EIENDOMMER FORVALTET',
+            description: 'Topp 3 Airbnb-vert i Italia'
           },
           {
-            title: "AI-Menneskelig Synergi",
-            description: "Teknologi forsterker menneskelig potensial. Ved å kombinere AI-verktøy med personlig coaching kan vi oppnå enestående resultater i personlig og forretningsmessig transformasjon.",
-            icon: "🔗"
+            number: '€150K+',
+            label: 'ÅRLIG INNTEKT',
+            description: 'Eiendomsforvaltningssuksess'
           },
           {
-            title: "Multikulturell Fordel",
-            description: "Å snakke 4 språk og bo i 6 land har lært meg at mangfold av perspektiv er nøkkelen til innovative løsninger og global suksess.",
-            icon: "🌐"
+            number: '6',
+            label: 'LAND',
+            description: 'Internasjonal erfaring'
           },
           {
-            title: "Kontinuerlig Læring",
-            description: "Fra undervisning til eiendomsforvaltning til AI-coaching, tror jeg på konstant utvikling og tilpasning til nye utfordringer og muligheter.",
-            icon: "📈"
+            number: '4',
+            label: 'SPRÅK',
+            description: 'Flerspråklig coaching'
+          },
+          {
+            number: '15+',
+            label: 'ÅR',
+            description: 'Bransjeekspertise'
+          },
+          {
+            number: '300+',
+            label: 'MEDLEMMER',
+            description: 'Mondelio ideell fellesskap'
           }
         ]
       },
-      achievements: {
-        title: "Nøkkelprestasjoner",
-        items: [
-          { label: "Top 3 Airbnb Vert", value: "Italia Nasjonal Rangering", icon: "🏆" },
-          { label: "Eiendommer Forvaltet", value: "250+ Annonser", icon: "🏠" },
-          { label: "Årlig Inntekt", value: "€150k+", icon: "💰" },
-          { label: "Språk Snakket", value: "4 Flytende", icon: "🗣️" },
-          { label: "AI Assistenter", value: "12 Aktive", icon: "🤖" },
-          { label: "År Erfaring", value: "20+ Internasjonal", icon: "📅" },
-          { label: "Bransjer Betjent", value: "10+ Forskjellige", icon: "🏢" },
-          { label: "Land Bodd", value: "3 (Italia, Frankrike, Norge)", icon: "🌍" }
-        ]
+      philosophy: {
+        title: 'MIN FILOSOFI',
+        quote: 'TRANSFORMASJON GJENNOM UTDANNING, INNOVASJON OG MENNESKELIG FORBINDELSE',
+        description: 'Jeg tror på å styrke enkeltpersoner og bedrifter til å oppnå sitt fulle potensial. Ved å kombinere banebrytende teknologi med tidløse menneskelige verdier, skaper vi bærekraftig suksess som transcenderer grenser og bransjer.'
       }
     }
   }
 
-  const currentContent = content[language]
+  const t = content[language]
 
   return (
-    <div className="min-h-screen pt-16 bg-black">
+    <div className="min-h-screen bg-black text-white pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="text-[15vw] md:text-[20vw] font-black text-yellow-400/10 leading-none"
+            style={{ fontFamily: 'Impact, Arial Black, sans-serif' }}
+          >
+            {t.hero.subtitle}
+          </motion.h1>
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-5xl md:text-7xl font-bold mb-4"
           >
-            <h1 className="text-6xl md:text-8xl font-bold text-yellow-400 mb-6">
-              {currentContent.hero.title}
-            </h1>
-            <h2 className="text-3xl md:text-4xl text-white mb-6">
-              {currentContent.hero.subtitle}
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              {currentContent.hero.description}
-            </p>
-          </motion.div>
+            {t.hero.title}
+          </motion.h2>
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-3xl md:text-5xl font-bold text-yellow-400 mb-6"
+          >
+            {t.hero.tagline}
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl md:text-2xl text-gray-300"
+          >
+            {t.hero.description}
+          </motion.p>
         </div>
       </section>
 
-      {/* Timeline Section with Images */}
-      <section className="py-20 bg-black">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            {currentContent.timeline.map((item, index) => (
+      {/* Story Section */}
+      <section className="py-32 bg-black border-t border-yellow-400/20">
+        <div className="max-w-5xl mx-auto px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-5xl md:text-7xl font-black text-yellow-400 mb-16"
+          >
+            {t.story.title}
+          </motion.h2>
+
+          <div className="space-y-8">
+            {t.story.paragraphs.map((paragraph, index) => (
+              <motion.p
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-xl md:text-2xl text-gray-300 leading-relaxed"
+              >
+                {paragraph}
+              </motion.p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Highlights Section */}
+      <section className="py-32 bg-black">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-5xl md:text-7xl font-black text-center mb-20 text-yellow-400"
+          >
+            {t.highlights.title}
+          </motion.h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+            {t.highlights.items.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`flex flex-col md:flex-row gap-8 items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
+                viewport={{ once: true }}
+                className="text-center p-6 border-2 border-white/10 hover:border-yellow-400 transition-all duration-300 rounded-lg"
               >
-                {/* Image */}
-                <div className="w-full md:w-1/2">
-                  <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-4 left-4 bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-lg">
-                      {item.icon} {item.year}
-                    </div>
-                  </div>
+                <div className="text-5xl md:text-6xl font-black text-yellow-400 mb-2">
+                  {item.number}
                 </div>
-
-                {/* Content */}
-                <div className="w-full md:w-1/2">
-                  <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl border border-yellow-400/20 hover:border-yellow-400/50 transition-all duration-300">
-                    <h3 className="text-3xl font-bold text-yellow-400 mb-3">
-                      {item.title}
-                    </h3>
-                    <div className="flex items-center gap-2 text-gray-400 mb-4">
-                      <MapPin className="w-4 h-4" />
-                      <span>{item.location}</span>
-                    </div>
-                    <p className="text-gray-300 text-lg leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
+                <div className="text-sm md:text-base font-bold mb-2">
+                  {item.label}
+                </div>
+                <div className="text-xs md:text-sm text-gray-400">
+                  {item.description}
                 </div>
               </motion.div>
             ))}
@@ -454,75 +293,35 @@ const About = ({ language }) => {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl font-bold text-yellow-400 mb-4">
-              {currentContent.philosophy.title}
-            </h2>
-            <p className="text-2xl text-gray-300">
-              {currentContent.philosophy.subtitle}
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {currentContent.philosophy.points.map((point, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-black p-8 rounded-2xl border border-yellow-400/20 hover:border-yellow-400/50 transition-all duration-300"
-              >
-                <div className="text-5xl mb-4">{point.icon}</div>
-                <h3 className="text-2xl font-bold text-yellow-400 mb-3">
-                  {point.title}
-                </h3>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  {point.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Achievements Grid */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 bg-yellow-400 text-black">
+        <div className="max-w-5xl mx-auto px-4 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-5xl font-bold text-yellow-400 text-center mb-16"
+            className="text-4xl md:text-6xl font-black mb-8"
           >
-            {currentContent.achievements.title}
+            {t.philosophy.title}
           </motion.h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {currentContent.achievements.items.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-gradient-to-br from-gray-900 to-black p-6 rounded-xl border border-yellow-400/20 hover:border-yellow-400/50 transition-all duration-300 text-center"
-              >
-                <div className="text-4xl mb-3">{item.icon}</div>
-                <div className="text-2xl font-bold text-yellow-400 mb-2">
-                  {item.value}
-                </div>
-                <div className="text-sm text-gray-400">{item.label}</div>
-              </motion.div>
-            ))}
-          </div>
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-bold mb-8 leading-tight"
+          >
+            {t.philosophy.quote}
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-xl md:text-2xl leading-relaxed"
+          >
+            {t.philosophy.description}
+          </motion.p>
         </div>
       </section>
     </div>
@@ -530,4 +329,3 @@ const About = ({ language }) => {
 }
 
 export default About
-

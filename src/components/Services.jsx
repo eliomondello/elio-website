@@ -1,837 +1,309 @@
 import { motion } from 'framer-motion'
-import { Check, ArrowRight, Star, Clock, Users, Globe, Zap, Target } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { ArrowRight, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const Services = ({ language }) => {
   const content = {
     en: {
       hero: {
-        title: "SERVICES",
-        subtitle: "Transform Your Business with AI-Powered Solutions",
-        description: "Comprehensive coaching and consulting services designed to unlock your potential and accelerate your success across multiple domains."
+        title: 'SERVICES',
+        subtitle: 'TRANSFORM YOUR BUSINESS',
+        description: 'Comprehensive solutions to unlock your potential and accelerate success across multiple domains.'
       },
       services: [
         {
-          title: "Property Management Consulting",
-          icon: "🏠",
-          description: "Strategic consulting to maximize rental income, optimize operations, and transform property portfolios using data-driven insights and AI technologies.",
-          features: [
-            "Revenue optimization strategies",
-            "Operational efficiency improvements",
-            "AI-powered analytics and insights",
-            "Market analysis and positioning",
-            "Guest experience enhancement",
-            "Automated booking management"
-          ],
-          benefits: [
-            "Increase rental income by 40-60%",
-            "Reduce operational overhead by 30%",
-            "Achieve higher guest satisfaction scores",
-            "Streamline property management processes"
-          ],
-          pricing: "Custom pricing based on portfolio size",
-          duration: "3-6 months engagement"
+          title: 'PROPERTY MANAGEMENT',
+          icon: '🏠',
+          tagline: 'Maximize Revenue, Minimize Effort',
+          description: 'Strategic consulting to transform property portfolios using data-driven insights and AI technologies.',
+          highlights: [
+            'Increase rental income by 40-60%',
+            'Top 3 Airbnb host expertise',
+            '250+ properties managed',
+            'AI-powered analytics'
+          ]
         },
         {
-          title: "Digital Marketing Solutions",
-          icon: "🚀",
-          description: "Comprehensive digital marketing strategies including WordPress website development, SEO optimization, and AI-powered marketing solutions for businesses.",
-          features: [
-            "WordPress website development",
-            "SEO optimization and strategy",
-            "AI-powered content creation",
-            "Social media marketing",
-            "Analytics and performance tracking",
-            "Conversion rate optimization"
-          ],
-          benefits: [
-            "Increase online visibility by 200%+",
-            "Generate more qualified leads",
-            "Improve search engine rankings",
-            "Build strong digital presence"
-          ],
-          pricing: "Starting from €2,500",
-          duration: "2-4 months project timeline"
+          title: 'DIGITAL MARKETING',
+          icon: '🚀',
+          tagline: 'Dominate Your Market Online',
+          description: 'Comprehensive digital strategies including SEO, content marketing, and AI-powered solutions.',
+          highlights: [
+            'Increase visibility by 200%+',
+            'Multilingual SEO expertise',
+            'WordPress development',
+            'Conversion optimization'
+          ]
         },
         {
-          title: "Multilingual Coaching",
-          icon: "🗣️",
-          description: "Personalized coaching in Italian, English, Norwegian, and French. Helping businesses and individuals unlock their potential through tailored guidance and cultural insights.",
-          features: [
-            "Cross-cultural communication training",
-            "Language learning acceleration",
-            "International business etiquette",
-            "Cultural adaptation strategies",
-            "Professional presentation skills",
-            "Global networking techniques"
-          ],
-          benefits: [
-            "Expand into international markets",
-            "Improve cross-cultural communication",
-            "Build global professional networks",
-            "Increase cultural competency"
-          ],
-          pricing: "€150-300 per session",
-          duration: "Flexible scheduling"
+          title: 'MULTILINGUAL COACHING',
+          icon: '🗣️',
+          tagline: 'Break Language Barriers',
+          description: 'Personalized coaching in 4 languages helping businesses expand internationally.',
+          highlights: [
+            'Italian, English, Norwegian, French',
+            'Cross-cultural communication',
+            'International business etiquette',
+            'Global networking strategies'
+          ]
         },
         {
-          title: "Educational Services & Teaching",
-          icon: "📚",
-          description: "Multilingual teaching and educational support for kindergartens, elementary schools, middle schools, and high schools. Specialized in language instruction and student engagement.",
-          features: [
-            "Multilingual teaching (Italian, English, Norwegian, French)",
-            "Kindergarten and primary education",
-            "Middle and high school instruction",
-            "Special needs support and adaptation",
-            "Curriculum development assistance",
-            "Student engagement strategies"
-          ],
-          benefits: [
-            "Enhance student learning outcomes",
-            "Provide multilingual instruction",
-            "Support diverse learning needs",
-            "Bring international perspective to classroom"
-          ],
-          pricing: "Competitive hourly rates",
-          duration: "Flexible contracts and substitutions"
+          title: 'EDUCATION & TEACHING',
+          icon: '📚',
+          tagline: 'Inspire the Next Generation',
+          description: 'Multilingual teaching and educational support for all levels from kindergarten to high school.',
+          highlights: [
+            'Language instruction specialist',
+            'Student engagement expert',
+            'Curriculum development',
+            'Educational technology integration'
+          ]
         }
       ],
-      packages: {
-        title: "Coaching Packages",
-        subtitle: "Choose the perfect package for your transformation journey",
-        items: [
-          {
-            name: "Starter",
-            price: "€297",
-            duration: "1 Month",
-            description: "Perfect for individuals starting their transformation journey",
-            features: [
-              "4 Personalized Coaching Sessions",
-              "Basic AI Strategy Toolkit",
-              "30-Day Email Support",
-              "Goal Setting & Planning",
-              "Progress Tracking Tools"
-            ],
-            popular: false,
-            cta: "Get Started"
-          },
-          {
-            name: "Professional",
-            price: "€997",
-            duration: "2 Months",
-            description: "Ideal for professionals and small business owners",
-            features: [
-              "8 Advanced Coaching Sessions",
-              "Comprehensive AI Integration",
-              "Unlimited Email Support",
-              "Monthly Progress Review",
-              "Custom Strategy Development",
-              "Resource Library Access",
-              "Priority Scheduling"
-            ],
-            popular: true,
-            cta: "Most Popular"
-          },
-          {
-            name: "Elite Transformation",
-            price: "€1,999",
-            duration: "3 Months",
-            description: "Complete transformation for serious entrepreneurs",
-            features: [
-              "Unlimited Coaching Sessions",
-              "Full AI Ecosystem Access",
-              "Personal AI Assistant Setup",
-              "Quarterly Strategic Planning",
-              "Priority Email & Call Support",
-              "Custom Tool Development",
-              "Network Introduction",
-              "Success Guarantee"
-            ],
-            popular: false,
-            cta: "Transform Now"
-          }
-        ]
-      },
-      process: {
-        title: "How It Works",
-        steps: [
-          {
-            number: "01",
-            title: "Discovery Call",
-            description: "We start with a comprehensive consultation to understand your goals, challenges, and current situation.",
-            icon: "🎯"
-          },
-          {
-            number: "02",
-            title: "Strategy Development",
-            description: "I create a personalized strategy tailored to your specific needs and objectives using AI-powered insights.",
-            icon: "📋"
-          },
-          {
-            number: "03",
-            title: "Implementation",
-            description: "Together, we execute the strategy with regular coaching sessions, tools, and continuous support.",
-            icon: "⚡"
-          },
-          {
-            number: "04",
-            title: "Optimization",
-            description: "We continuously monitor progress and optimize the approach to ensure maximum results and success.",
-            icon: "📈"
-          }
-        ]
-      },
-      specializations: {
-        title: "Specialized Services",
-        items: [
-          {
-            title: "AI Integration for Businesses",
-            description: "Help businesses integrate AI tools and automation to improve efficiency and reduce costs.",
-            icon: "🤖"
-          },
-          {
-            title: "International Expansion Consulting",
-            description: "Guide businesses through international expansion with cultural insights and market strategies.",
-            icon: "🌍"
-          },
-          {
-            title: "Educational Institution Consulting",
-            description: "Transform educational institutions with modern teaching methods and technology integration.",
-            icon: "📚"
-          },
-          {
-            title: "Heritage Language Preservation",
-            description: "Help individuals and communities preserve and revitalize their cultural and linguistic heritage.",
-            icon: "🏛️"
-          }
-        ]
+      cta: {
+        title: "READY TO TRANSFORM YOUR BUSINESS?",
+        subtitle: "Let's discuss how I can help you achieve extraordinary results.",
+        button: 'BOOK A CONSULTATION'
       }
     },
     it: {
       hero: {
-        title: "SERVIZI",
-        subtitle: "Trasforma il Tuo Business con Soluzioni Potenziate dall'IA",
-        description: "Servizi completi di coaching e consulenza progettati per sbloccare il tuo potenziale e accelerare il tuo successo in molteplici domini."
+        title: 'SERVIZI',
+        subtitle: 'TRASFORMA IL TUO BUSINESS',
+        description: 'Soluzioni complete per sbloccare il tuo potenziale e accelerare il successo in molteplici domini.'
       },
       services: [
         {
-          title: "Consulenza Gestione Immobiliare",
-          icon: "🏠",
-          description: "Consulenza strategica per massimizzare il reddito da locazione, ottimizzare le operazioni e trasformare i portafogli immobiliari utilizzando insights basati sui dati e tecnologie IA.",
-          features: [
-            "Strategie di ottimizzazione dei ricavi",
-            "Miglioramenti dell'efficienza operativa",
-            "Analisi e insights potenziati dall'IA",
-            "Analisi di mercato e posizionamento",
-            "Miglioramento dell'esperienza degli ospiti",
-            "Gestione automatizzata delle prenotazioni"
-          ],
-          benefits: [
-            "Aumenta il reddito da locazione del 40-60%",
-            "Riduci i costi operativi del 30%",
-            "Ottieni punteggi di soddisfazione degli ospiti più elevati",
-            "Semplifica i processi di gestione immobiliare"
-          ],
-          pricing: "Prezzi personalizzati in base alla dimensione del portafoglio",
-          duration: "Impegno di 3-6 mesi"
+          title: 'GESTIONE IMMOBILIARE',
+          icon: '🏠',
+          tagline: 'Massimizza i Ricavi, Minimizza lo Sforzo',
+          description: 'Consulenza strategica per trasformare portafogli immobiliari usando insights basati sui dati e tecnologie AI.',
+          highlights: [
+            'Aumenta i ricavi del 40-60%',
+            'Esperienza Top 3 host Airbnb',
+            '250+ proprietà gestite',
+            'Analytics potenziati da AI'
+          ]
         },
         {
-          title: "Soluzioni di Marketing Digitale",
-          icon: "🚀",
-          description: "Strategie di marketing digitale complete incluso sviluppo siti WordPress, ottimizzazione SEO e soluzioni di marketing potenziate dall'IA per le aziende.",
-          features: [
-            "Sviluppo siti web WordPress",
-            "Ottimizzazione e strategia SEO",
-            "Creazione contenuti potenziata dall'IA",
-            "Marketing sui social media",
-            "Analisi e monitoraggio delle prestazioni",
-            "Ottimizzazione del tasso di conversione"
-          ],
-          benefits: [
-            "Aumenta la visibilità online del 200%+",
-            "Genera più lead qualificati",
-            "Migliora il posizionamento sui motori di ricerca",
-            "Costruisci una forte presenza digitale"
-          ],
-          pricing: "A partire da €2.500",
-          duration: "Tempistiche progetto 2-4 mesi"
+          title: 'MARKETING DIGITALE',
+          icon: '🚀',
+          tagline: 'Domina il Tuo Mercato Online',
+          description: 'Strategie digitali complete inclusi SEO, content marketing e soluzioni potenziate da AI.',
+          highlights: [
+            'Aumenta visibilità del 200%+',
+            'Esperienza SEO multilingue',
+            'Sviluppo WordPress',
+            'Ottimizzazione conversioni'
+          ]
         },
         {
-          title: "Coaching Multilingue",
-          icon: "🗣️",
-          description: "Coaching personalizzato in italiano, inglese, norvegese e francese. Aiutare aziende e individui a sbloccare il loro potenziale attraverso guida su misura e insights culturali.",
-          features: [
-            "Formazione sulla comunicazione interculturale",
-            "Accelerazione dell'apprendimento linguistico",
-            "Etichetta aziendale internazionale",
-            "Strategie di adattamento culturale",
-            "Competenze di presentazione professionale",
-            "Tecniche di networking globale"
-          ],
-          benefits: [
-            "Espanditi nei mercati internazionali",
-            "Migliora la comunicazione interculturale",
-            "Costruisci reti professionali globali",
-            "Aumenta la competenza culturale"
-          ],
-          pricing: "€150-300 per sessione",
-          duration: "Programmazione flessibile"
+          title: 'COACHING MULTILINGUE',
+          icon: '🗣️',
+          tagline: 'Abbatti le Barriere Linguistiche',
+          description: 'Coaching personalizzato in 4 lingue per aiutare le aziende ad espandersi internazionalmente.',
+          highlights: [
+            'Italiano, Inglese, Norvegese, Francese',
+            'Comunicazione interculturale',
+            'Etichetta business internazionale',
+            'Strategie networking globale'
+          ]
         },
         {
-          title: "Servizi Educativi e Insegnamento",
-          icon: "📚",
-          description: "Insegnamento multilingue e supporto educativo per asili, scuole elementari, medie e superiori. Specializzato nell'insegnamento delle lingue e nel coinvolgimento degli studenti.",
-          features: [
-            "Insegnamento multilingue (italiano, inglese, norvegese, francese)",
-            "Educazione per asili e scuole primarie",
-            "Istruzione per scuole medie e superiori",
-            "Supporto e adattamento per bisogni speciali",
-            "Assistenza nello sviluppo del curriculum",
-            "Strategie di coinvolgimento degli studenti"
-          ],
-          benefits: [
-            "Migliora i risultati di apprendimento degli studenti",
-            "Fornisci istruzione multilingue",
-            "Supporta esigenze di apprendimento diverse",
-            "Porta prospettiva internazionale in classe"
-          ],
-          pricing: "Tariffe orarie competitive",
-          duration: "Contratti flessibili e sostituzioni"
+          title: 'EDUCAZIONE & INSEGNAMENTO',
+          icon: '📚',
+          tagline: 'Ispira la Prossima Generazione',
+          description: 'Insegnamento multilingue e supporto educativo per tutti i livelli dalla scuola materna alle superiori.',
+          highlights: [
+            'Specialista istruzione linguistica',
+            'Esperto coinvolgimento studenti',
+            'Sviluppo curriculum',
+            'Integrazione tecnologie educative'
+          ]
         }
       ],
-      packages: {
-        title: "Pacchetti Coaching",
-        subtitle: "Scegli il pacchetto perfetto per il tuo percorso di trasformazione",
-        items: [
-          {
-            name: "Starter",
-            price: "€297",
-            duration: "1 Mese",
-            description: "Perfetto per individui che iniziano il loro percorso di trasformazione",
-            features: [
-              "4 Sessioni di Coaching Personalizzate",
-              "Toolkit IA Base",
-              "Supporto Email 30 Giorni",
-              "Definizione Obiettivi e Pianificazione",
-              "Strumenti di Monitoraggio Progressi"
-            ],
-            popular: false,
-            cta: "Inizia Ora"
-          },
-          {
-            name: "Professional",
-            price: "€997",
-            duration: "2 Mesi",
-            description: "Ideale per professionisti e piccoli imprenditori",
-            features: [
-              "8 Sessioni di Coaching Avanzate",
-              "Integrazione IA Completa",
-              "Supporto Email Illimitato",
-              "Revisione Mensile Progressi",
-              "Sviluppo Strategia Personalizzata",
-              "Accesso Libreria Risorse",
-              "Programmazione Prioritaria"
-            ],
-            popular: true,
-            cta: "Più Popolare"
-          },
-          {
-            name: "Elite Transformation",
-            price: "€1,999",
-            duration: "3 Mesi",
-            description: "Trasformazione completa per imprenditori seri",
-            features: [
-              "Sessioni di Coaching Illimitate",
-              "Accesso Ecosistema IA Completo",
-              "Configurazione Assistente IA Personale",
-              "Pianificazione Strategica Trimestrale",
-              "Supporto Email e Chiamate Prioritario",
-              "Sviluppo Strumenti Personalizzati",
-              "Introduzioni Network",
-              "Garanzia di Successo"
-            ],
-            popular: false,
-            cta: "Trasforma Ora"
-          }
-        ]
+      cta: {
+        title: "PRONTO A TRASFORMARE IL TUO BUSINESS?",
+        subtitle: "Discutiamo come posso aiutarti a raggiungere risultati straordinari.",
+        button: 'PRENOTA UNA CONSULENZA'
       }
     },
     no: {
       hero: {
-        title: "TJENESTER",
-        subtitle: "Transformer Din Virksomhet med AI-Drevne Løsninger",
-        description: "Omfattende coaching- og konsulenttjenester designet for å låse opp ditt potensial og akselerere din suksess på tvers av flere domener."
+        title: 'TJENESTER',
+        subtitle: 'TRANSFORMER DIN BEDRIFT',
+        description: 'Omfattende løsninger for å låse opp potensialet ditt og akselerere suksess på tvers av flere domener.'
       },
       services: [
         {
-          title: "Eiendomsforvaltningskonsultasjon",
-          icon: "🏠",
-          description: "Strategisk konsultasjon for å maksimere leieinntekter, optimalisere drift og transformere eiendomsporteføljer ved hjelp av datadrevne innsikter og AI-teknologier.",
-          features: [
-            "Inntektsoptimaliseringsstrategier",
-            "Forbedringer av operasjonell effektivitet",
-            "AI-drevet analyse og innsikt",
-            "Markedsanalyse og posisjonering",
-            "Forbedring av gjesteopplevelse",
-            "Automatisert bookingstyring"
-          ],
-          benefits: [
-            "Øk leieinntekter med 40-60%",
-            "Reduser driftskostnader med 30%",
-            "Oppnå høyere gjestetilfredshetsscore",
-            "Effektiviser eiendomsforvaltningsprosesser"
-          ],
-          pricing: "Tilpasset prising basert på porteføljestrørrelse",
-          duration: "3-6 måneders engasjement"
+          title: 'EIENDOMSFORVALTNING',
+          icon: '🏠',
+          tagline: 'Maksimer Inntekt, Minimer Innsats',
+          description: 'Strategisk rådgivning for å transformere eiendomsporteføljer ved hjelp av datadrevne innsikter og AI-teknologier.',
+          highlights: [
+            'Øk leieinntekter med 40-60%',
+            'Topp 3 Airbnb-vertsekspertise',
+            '250+ eiendommer forvaltet',
+            'AI-drevet analyse'
+          ]
         },
         {
-          title: "Digitale Markedsføringsløsninger",
-          icon: "🚀",
-          description: "Omfattende digitale markedsføringsstrategier inkludert WordPress nettstedsutvikling, SEO-optimalisering og AI-drevne markedsføringsløsninger for bedrifter.",
-          features: [
-            "WordPress nettstedsutvikling",
-            "SEO-optimalisering og strategi",
-            "AI-drevet innholdsproduksjon",
-            "Markedsføring på sosiale medier",
-            "Analyse og ytelsesmåling",
-            "Konverteringsrateoptimalisering"
-          ],
-          benefits: [
-            "Øk online synlighet med 200%+",
-            "Generer flere kvalifiserte leads",
-            "Forbedre søkemotorrangeringer",
-            "Bygg sterk digital tilstedeværelse"
-          ],
-          pricing: "Fra €2.500",
-          duration: "2-4 måneders prosjekttidslinje"
+          title: 'DIGITAL MARKEDSFØRING',
+          icon: '🚀',
+          tagline: 'Dominer Markedet Ditt Online',
+          description: 'Omfattende digitale strategier inkludert SEO, innholdsmarkedsføring og AI-drevne løsninger.',
+          highlights: [
+            'Øk synlighet med 200%+',
+            'Flerspråklig SEO-ekspertise',
+            'WordPress-utvikling',
+            'Konverteringsoptimalisering'
+          ]
         },
         {
-          title: "Flerspåklig Coaching",
-          icon: "🗣️",
-          description: "Personlig coaching på italiensk, engelsk, norsk og fransk. Hjelper bedrifter og enkeltpersoner med å låse opp sitt potensial gjennom skreddersydd veiledning og kulturelle innsikter.",
-          features: [
-            "Tverrkulturell kommunikasjonstrening",
-            "Språklæringsakselerasjon",
-            "Internasjonal forretningsetikette",
-            "Kulturelle tilpasningsstrategier",
-            "Profesjonelle presentasjonsferdigheter",
-            "Globale nettverksteknikker"
-          ],
-          benefits: [
-            "Ekspander til internasjonale markeder",
-            "Forbedre tverrkulturell kommunikasjon",
-            "Bygg globale profesjonelle nettverk",
-            "Øk kulturell kompetanse"
-          ],
-          pricing: "€150-300 per økt",
-          duration: "Fleksibel planlegging"
+          title: 'FLERSPRÅKLIG COACHING',
+          icon: '🗣️',
+          tagline: 'Bryt Språkbarrierer',
+          description: 'Personlig coaching på 4 språk som hjelper bedrifter med å ekspandere internasjonalt.',
+          highlights: [
+            'Italiensk, Engelsk, Norsk, Fransk',
+            'Tverrkulturell kommunikasjon',
+            'Internasjonal forretningsetikette',
+            'Globale nettverksstrategier'
+          ]
         },
         {
-          title: "Pedagogiske Tjenester og Undervisning",
-          icon: "📚",
-          description: "Flerspåklig undervisning og pedagogisk støtte for barnehager, barneskoler, ungdomsskoler og videregående skoler. Spesialisert i språkundervisning og elevengasjement.",
-          features: [
-            "Flerspåklig undervisning (italiensk, engelsk, norsk, fransk)",
-            "Barnehage og grunnskoleutdanning",
-            "Ungdomsskole og videregående undervisning",
-            "Spesialbehovsstøtte og tilpasning",
-            "Hjelp med læreplansutvikling",
-            "Elevengasjementsstrategier"
-          ],
-          benefits: [
-            "Forbedre elevenes læringsresultater",
-            "Tilby flerspåklig undervisning",
-            "Støtte ulike læringsbehov",
-            "Bring internasjonalt perspektiv til klasserommet"
-          ],
-          pricing: "Konkurransedyktige timepriser",
-          duration: "Fleksible kontrakter og vikariater"
+          title: 'UTDANNING & UNDERVISNING',
+          icon: '📚',
+          tagline: 'Inspirer Neste Generasjon',
+          description: 'Flerspråklig undervisning og pedagogisk støtte for alle nivåer fra barnehage til videregående.',
+          highlights: [
+            'Språkinstruksjonsspesialist',
+            'Elevengasjementsekspert',
+            'Læreplanutvikkling',
+            'Pedagogisk teknologiintegrering'
+          ]
         }
       ],
-      packages: {
-        title: "Coaching Pakker",
-        subtitle: "Velg den perfekte pakken for din transformasjonsreise",
-        items: [
-          {
-            name: "Starter",
-            price: "€297",
-            duration: "1 Måned",
-            description: "Perfekt for individer som starter sin transformasjonsreise",
-            features: [
-              "4 Personlige Coaching Økter",
-              "Grunnleggende AI Verktøysett",
-              "30-Dagers E-post Støtte",
-              "Målsetting og Planlegging",
-              "Fremgangsverktøy"
-            ],
-            popular: false,
-            cta: "Kom i Gang"
-          },
-          {
-            name: "Professional",
-            price: "€997",
-            duration: "2 Måneder",
-            description: "Ideell for profesjonelle og små bedriftseiere",
-            features: [
-              "8 Avanserte Coaching Økter",
-              "Omfattende AI Integrasjon",
-              "Ubegrenset E-post Støtte",
-              "Månedlig Fremgangsgjennomgang",
-              "Tilpasset Strategiutvikling",
-              "Ressursbibliotek Tilgang",
-              "Prioritert Planlegging"
-            ],
-            popular: true,
-            cta: "Mest Populær"
-          },
-          {
-            name: "Elite Transformation",
-            price: "€1,999",
-            duration: "3 Måneder",
-            description: "Komplett transformasjon for seriøse entreprenører",
-            features: [
-              "Ubegrensede Coaching Økter",
-              "Full AI Økosystem Tilgang",
-              "Personlig AI Assistent Oppsett",
-              "Kvartalsvis Strategisk Planlegging",
-              "Prioritert E-post og Telefonstøtte",
-              "Tilpasset Verktøyutvikling",
-              "Nettverksintroduksjon",
-              "Suksessgaranti"
-            ],
-            popular: false,
-            cta: "Transformer Nå"
-          }
-        ]
+      cta: {
+        title: "KLAR TIL Å TRANSFORMERE BEDRIFTEN DIN?",
+        subtitle: "La oss diskutere hvordan jeg kan hjelpe deg med å oppnå ekstraordinære resultater.",
+        button: 'BESTILL EN KONSULTASJON'
       }
     }
   }
 
-  const currentContent = content[language]
+  const t = content[language]
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen bg-black text-white pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="text-[15vw] md:text-[20vw] font-black text-yellow-400/10 leading-none"
+            style={{ fontFamily: 'Impact, Arial Black, sans-serif' }}
+          >
+            {t.hero.title}
+          </motion.h1>
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-5xl md:text-7xl font-black mb-6 text-yellow-400"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-yellow-400 mb-6">
-              {currentContent.hero.title}
-            </h1>
-            <h2 className="text-2xl md:text-3xl text-white mb-6">
-              {currentContent.hero.subtitle}
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              {currentContent.hero.description}
-            </p>
-          </motion.div>
+            {t.hero.subtitle}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl text-gray-300"
+          >
+            {t.hero.description}
+          </motion.p>
         </div>
       </section>
 
-      {/* Services Overview */}
-      {currentContent.services && (
-        <section className="py-20 bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Core Services
-              </h2>
-              <p className="text-xl text-gray-400">
-                Comprehensive solutions tailored to your specific needs
-              </p>
-            </motion.div>
-
-            <div className="space-y-16">
-              {currentContent.services.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className={`grid lg:grid-cols-2 gap-12 items-center ${
-                    index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                  }`}
-                >
-                  {/* Content */}
-                  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                    <div className="flex items-center mb-6">
-                      <span className="text-4xl mr-4">{service.icon}</span>
-                      <h3 className="text-3xl font-bold text-white">{service.title}</h3>
-                    </div>
-                    
-                    <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    {/* Features */}
-                    <div className="mb-8">
-                      <h4 className="text-xl font-semibold text-white mb-4">What's Included:</h4>
-                      <div className="grid md:grid-cols-2 gap-3">
-                        {service.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center text-gray-300">
-                            <Check className="w-4 h-4 text-yellow-400 mr-3 flex-shrink-0" />
-                            {feature}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Benefits */}
-                    <div className="mb-8">
-                      <h4 className="text-xl font-semibold text-white mb-4">Expected Results:</h4>
-                      <ul className="space-y-2">
-                        {service.benefits.map((benefit, benefitIndex) => (
-                          <li key={benefitIndex} className="flex items-center text-gray-300">
-                            <Target className="w-4 h-4 text-yellow-400 mr-3 flex-shrink-0" />
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Pricing & Duration */}
-                    <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                      <div className="bg-gray-800 p-4 rounded-lg flex-1">
-                        <div className="text-yellow-400 font-semibold mb-1">Investment</div>
-                        <div className="text-white font-bold">{service.pricing}</div>
-                      </div>
-                      <div className="bg-gray-800 p-4 rounded-lg flex-1">
-                        <div className="text-yellow-400 font-semibold mb-1">Timeline</div>
-                        <div className="text-white font-bold">{service.duration}</div>
-                      </div>
-                    </div>
-
-                    <Button 
-                      asChild
-                      className="bg-yellow-400 text-black hover:bg-yellow-300 font-semibold"
-                    >
-                      <a href="https://mondosol.com/coaching" target="_blank" rel="noopener noreferrer">
-                        Get Started
-                        <ArrowRight className="ml-2 w-4 h-4" />
-                      </a>
-                    </Button>
-                  </div>
-
-                  {/* Visual */}
-                  <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                    <div className="relative">
-                      <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center border border-gray-700">
-                        <div className="text-center">
-                          <div className="text-8xl mb-4">{service.icon}</div>
-                          <p className="text-gray-400 text-xl font-medium">
-                            {service.title}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="absolute inset-0 bg-yellow-400/5 rounded-2xl blur-xl"></div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Coaching Packages */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              {currentContent.packages.title}
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              {currentContent.packages.subtitle}
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {currentContent.packages.items.map((pkg, index) => (
+      {/* Services Grid */}
+      <section className="py-32 bg-black">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8">
+            {t.services.map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className={`relative p-8 rounded-xl border-2 transition-all duration-300 ${
-                  pkg.popular 
-                    ? 'border-yellow-400 bg-yellow-400/5 scale-105' 
-                    : 'border-gray-700 bg-gray-800 hover:border-yellow-400/50'
-                }`}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group p-8 md:p-12 border-2 border-white/10 hover:border-yellow-400 transition-all duration-300 rounded-lg"
               >
-                {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-semibold">
-                      {pkg.cta}
-                    </span>
-                  </div>
-                )}
-                
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                  <div className="text-4xl font-bold text-yellow-400 mb-2">{pkg.price}</div>
-                  <div className="text-gray-400 mb-4">{pkg.duration}</div>
-                  <p className="text-gray-300 text-sm">{pkg.description}</p>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-300">
-                      <Check className="w-4 h-4 text-yellow-400 mr-3 flex-shrink-0" />
-                      {feature}
+                <div className="text-6xl mb-6">{service.icon}</div>
+                <h3 className="text-3xl md:text-4xl font-black mb-3 group-hover:text-yellow-400 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-lg md:text-xl text-yellow-400 font-bold mb-4">
+                  {service.tagline}
+                </p>
+                <p className="text-base md:text-lg text-gray-400 mb-8 leading-relaxed">
+                  {service.description}
+                </p>
+                <ul className="space-y-3">
+                  {service.highlights.map((highlight, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-1" />
+                      <span className="text-gray-300">{highlight}</span>
                     </li>
                   ))}
                 </ul>
-
-                <Button 
-                  asChild
-                  className={`w-full ${
-                    pkg.popular 
-                      ? 'bg-yellow-400 text-black hover:bg-yellow-300' 
-                      : 'bg-gray-700 text-white hover:bg-yellow-400 hover:text-black'
-                  }`}
-                >
-                  <a href="https://mondosol.com/coaching" target="_blank" rel="noopener noreferrer">
-                    {pkg.popular ? pkg.cta : `Choose ${pkg.name}`}
-                  </a>
-                </Button>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      {currentContent.process && (
-        <section className="py-20 bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                {currentContent.process.title}
-              </h2>
-              <p className="text-xl text-gray-400">
-                A proven methodology for achieving breakthrough results
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {currentContent.process.steps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="text-center"
-                >
-                  <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-xl mx-auto mb-4">
-                      {step.number}
-                    </div>
-                    <div className="text-4xl">{step.icon}</div>
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">{step.title}</h3>
-                  <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">{step.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Specializations */}
-      {currentContent.specializations && (
-        <section className="py-20 bg-black">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                {currentContent.specializations.title}
-              </h2>
-              <p className="text-xl text-gray-400">
-                Unique expertise in niche areas
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {currentContent.specializations.items.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="bg-gray-900 p-8 rounded-xl hover:bg-gray-800 transition-all duration-300 group"
-                >
-                  <div className="flex items-center mb-4">
-                    <span className="text-3xl mr-4">{item.icon}</span>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-yellow-400 transition-colors">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-                    {item.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-yellow-400 to-yellow-500">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-32 bg-yellow-400 text-black">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-5xl md:text-7xl font-black mb-6 leading-tight"
+          >
+            {t.cta.title}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-xl md:text-2xl mb-12"
+          >
+            {t.cta.subtitle}
+          </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-black/80 mb-8 max-w-2xl mx-auto">
-              Book a free consultation to discuss your goals and discover how my services can help you achieve breakthrough results.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                asChild
+            <Link to="/contact">
+              <Button
                 size="lg"
-                className="bg-black text-yellow-400 hover:bg-gray-900 font-semibold text-lg px-8 py-6"
+                className="bg-black text-white hover:bg-gray-900 font-bold text-xl px-12 py-8 group"
               >
-                <a href="https://mondosol.com/coaching" target="_blank" rel="noopener noreferrer">
-                  Book Free Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
+                {t.cta.button}
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              
-              <Button 
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-black text-black hover:bg-black hover:text-yellow-400 font-semibold text-lg px-8 py-6"
-              >
-                <a href="/contact">
-                  Get Custom Quote
-                </a>
-              </Button>
-            </div>
+            </Link>
           </motion.div>
         </div>
       </section>

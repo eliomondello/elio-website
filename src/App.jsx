@@ -6,6 +6,7 @@ import About from './components/About'
 import Portfolio from './components/Portfolio'
 import Testimonials from './components/Testimonials'
 import Services from './components/Services'
+import Books from './components/Books'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import './App.css'
@@ -23,6 +24,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio language={language} />} />
           <Route path="/testimonials" element={<Testimonials language={language} />} />
           <Route path="/services" element={<Services language={language} />} />
+          <Route path="/books" element={<Books language={language} />} />
           <Route path="/contact" element={<Contact language={language} />} />
         </Routes>
         <Footer language={language} />

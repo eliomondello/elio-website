@@ -14,6 +14,7 @@ const Navigation = ({ language, setLanguage }) => {
       { path: '/portfolio', label: 'Portfolio' },
       { path: '/testimonials', label: 'Testimonials' },
       { path: '/services', label: 'Services' },
+      { path: '/books', label: 'Books' },
       { path: '/contact', label: 'Contact' }
     ],
     it: [
@@ -22,6 +23,7 @@ const Navigation = ({ language, setLanguage }) => {
       { path: '/portfolio', label: 'Portfolio' },
       { path: '/testimonials', label: 'Testimonianze' },
       { path: '/services', label: 'Servizi' },
+      { path: '/books', label: 'Libri' },
       { path: '/contact', label: 'Contatti' }
     ],
     no: [
@@ -30,6 +32,7 @@ const Navigation = ({ language, setLanguage }) => {
       { path: '/portfolio', label: 'Portfolio' },
       { path: '/testimonials', label: 'Anbefalinger' },
       { path: '/services', label: 'Tjenester' },
+      { path: '/books', label: 'Bøker' },
       { path: '/contact', label: 'Kontakt' }
     ]
   }
