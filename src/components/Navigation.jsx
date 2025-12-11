@@ -70,12 +70,12 @@ const Navigation = ({ language, setLanguage }) => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="flex items-center space-x-4 lg:space-x-8">
             {navItems[language].map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className="text-white hover:text-yellow-400 transition-colors font-semibold text-lg"
+                className="text-white hover:text-yellow-400 transition-colors font-semibold text-xs sm:text-sm lg:text-lg"
               >
                 {item.label}
               </Link>
@@ -114,7 +114,7 @@ const Navigation = ({ language, setLanguage }) => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="hidden">
             <Button
               variant="ghost"
               size="sm"
