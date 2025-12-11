@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { ExternalLink, BookOpen, Bell } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
-import imagineYourDream from '../assets/imagine-your-dream-live-your-dream.jpeg'
-import onlineMediaVideo from '../assets/online-media-and-video.jpeg'
+import imagineYourDream from '../assets/online-media-and-video.jpeg'
+import onlineMediaVideo from '../assets/imagine-your-dream-live-your-dream.jpeg'
 
 const Books = ({ language }) => {
   const [email, setEmail] = useState('')

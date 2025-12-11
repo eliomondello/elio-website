@@ -226,26 +226,25 @@ const Home = ({ language = 'en' }) => {
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
 
-        {/* Top Left: Name */}
-        <div className="absolute top-20 left-4 md:left-8 z-20">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-2xl md:text-3xl font-bold text-white"
-          >
-            {t.hero.name} {t.hero.subtitle}
-          </motion.h1>
-        </div>
-
-        {/* Center: Large Name Overlay */}
+        {/* Center: Large Name Overlay with Animation */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <motion.h2
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="text-[15vw] md:text-[20vw] font-black text-yellow-400 leading-none tracking-tighter opacity-90"
-            style={{ fontFamily: 'Impact, Arial Black, sans-serif' }}
+            animate={{ 
+              opacity: 1, 
+              scale: 1,
+              y: [0, -10, 0]
+            }}
+            transition={{ 
+              opacity: { duration: 1, delay: 0.3 },
+              scale: { duration: 1, delay: 0.3 },
+              y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+            }}
+            className="text-[15vw] md:text-[20vw] font-black text-yellow-400 leading-none opacity-90"
+            style={{ 
+              fontFamily: 'Impact, Arial Black, sans-serif',
+              letterSpacing: '0.1em'
+            }}
           >
             {t.hero.name}
           </motion.h2>
@@ -345,7 +344,7 @@ const Home = ({ language = 'en' }) => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
+                  className="w-full h-full object-cover md:grayscale md:group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-300 flex items-end p-6">
                   <h3 className="text-2xl md:text-3xl font-bold text-white">{item.title}</h3>
@@ -423,7 +422,7 @@ const Home = ({ language = 'en' }) => {
                   <img
                     src={article.image}
                     alt={article.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover md:grayscale md:group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="space-y-3">
