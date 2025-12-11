@@ -59,9 +59,9 @@ const Home = ({ language = 'en' }) => {
       news: {
         title: 'NEWS & STORIES',
         items: [
-          { title: 'Scaling Property Management Across Europe', category: 'BUSINESS', date: '2025', desc: 'How I built a €150K+ property portfolio managing 250+ properties.', image: portfolioImg1 },
-          { title: 'The Power of Multilingual Marketing', category: 'MARKETING', date: '2024', desc: 'Strategies for reaching European markets in their native languages.', image: portfolioImg2 },
-          { title: 'Education as a Business Growth Tool', category: 'EDUCATION', date: '2024', desc: 'Why investing in team education drives extraordinary results.', image: portfolioImg3 }
+          { title: 'Scaling Property Management Across Europe', category: 'BUSINESS', date: '2025', desc: 'How I built a €150K+ property portfolio managing 250+ properties.', image: portfolioImg1, link: 'https://mondosol.com/short-term-let-property-management/' },
+          { title: 'The Power of Multilingual Marketing', category: 'MARKETING', date: '2024', desc: 'Strategies for reaching European markets in their native languages.', image: portfolioImg2, link: 'https://mondosol.com/multilingual-content-metrics/' },
+          { title: 'Education as a Business Growth Tool', category: 'EDUCATION', date: '2024', desc: 'Why investing in team education drives extraordinary results.', image: portfolioImg3, link: 'https://mondosol.com/language-coaching-testimonial/' }
         ]
       },
       books: {
@@ -123,9 +123,9 @@ const Home = ({ language = 'en' }) => {
       news: {
         title: 'NEWS & STORIE',
         items: [
-          { title: 'Scalare la Gestione Immobiliare in Europa', category: 'BUSINESS', date: '2025', desc: 'Come ho costruito un portfolio di €150K+ gestendo 250+ proprietà.', image: portfolioImg1 },
-          { title: 'Il Potere del Marketing Multilingue', category: 'MARKETING', date: '2024', desc: 'Strategie per raggiungere i mercati europei nelle loro lingue native.', image: portfolioImg2 },
-          { title: "L'Educazione come Strumento di Crescita Aziendale", category: 'EDUCAZIONE', date: '2024', desc: 'Perché investire nell\'educazione del team porta risultati straordinari.', image: portfolioImg3 }
+          { title: 'Scalare la Gestione Immobiliare in Europa', category: 'BUSINESS', date: '2025', desc: 'Come ho costruito un portfolio di €150K+ gestendo 250+ proprietà.', image: portfolioImg1, link: 'https://mondosol.com/short-term-let-property-management/' },
+          { title: 'Il Potere del Marketing Multilingue', category: 'MARKETING', date: '2024', desc: 'Strategie per raggiungere i mercati europei nelle loro lingue native.', image: portfolioImg2, link: 'https://mondosol.com/multilingual-content-metrics/' },
+          { title: "L'Educazione come Strumento di Crescita Aziendale", category: 'EDUCAZIONE', date: '2024', desc: 'Perché investire nell\'educazione del team porta risultati straordinari.', image: portfolioImg3, link: 'https://mondosol.com/language-coaching-testimonial/' }
         ]
       },
       books: {
@@ -187,9 +187,9 @@ const Home = ({ language = 'en' }) => {
       news: {
         title: 'NYHETER & HISTORIER',
         items: [
-          { title: 'Skalere Eiendomsforvaltning På Tvers av Europa', category: 'VIRKSOMHET', date: '2025', desc: 'Hvordan jeg bygde en €150K+ eiendomsportefolio som forvalter 250+ eiendommer.', image: portfolioImg1 },
-          { title: 'Kraften i Flerspråklig Markedsføring', category: 'MARKEDSFØRING', date: '2024', desc: 'Strategier for å nå europeiske markeder på deres mordsmål.', image: portfolioImg2 },
-          { title: 'Utdanning som Verktøy for Bedriftsvekst', category: 'UTDANNING', date: '2024', desc: 'Hvorfor investering i teamutdanning gir ekstraordinære resultater.', image: portfolioImg3 }
+          { title: 'Skalere Eiendomsforvaltning På Tvers av Europa', category: 'VIRKSOMHET', date: '2025', desc: 'Hvordan jeg bygde en €150K+ eiendomsportefolio som forvalter 250+ eiendommer.', image: portfolioImg1, link: 'https://mondosol.com/short-term-let-property-management/' },
+          { title: 'Kraften i Flerspåklig Markedsføring', category: 'MARKEDSFØRING', date: '2024', desc: 'Strategier for å nå europeiske markeder på deres mordsmål.', image: portfolioImg2, link: 'https://mondosol.com/multilingual-content-metrics/' },
+          { title: 'Utdanning som Verktøy for Bedriftsvekst', category: 'UTDANNING', date: '2024', desc: 'Hvorfor investering i teamutdanning gir ekstraordinære resultater.', image: portfolioImg3, link: 'https://mondosol.com/language-coaching-testimonial/' }
         ]
       },
       books: {
