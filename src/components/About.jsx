@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 // Timeline images
 import timelineImg1 from '../assets/IMG_20220610_125357490_HDR_PORTRAIT.jpg'

@@ -11,18 +11,21 @@ const Navigation = ({ language, setLanguage }) => {
     en: [
       { path: '/', label: 'HOME' },
       { path: '/about', label: 'ABOUT' },
+      { path: '/speaking', label: 'SPEAKING' },
       { path: '/books', label: 'BOOKS' },
       { path: '/contact', label: 'CONTACT' }
     ],
     it: [
       { path: '/', label: 'HOME' },
       { path: '/about', label: 'CHI SONO' },
+      { path: '/speaking', label: 'SPEAKING' },
       { path: '/books', label: 'LIBRI' },
       { path: '/contact', label: 'CONTATTI' }
     ],
     no: [
       { path: '/', label: 'HJEM' },
       { path: '/about', label: 'OM MEG' },
+      { path: '/speaking', label: 'FOREDRAG' },
       { path: '/books', label: 'BØKER' },
       { path: '/contact', label: 'KONTAKT' }
     ]
