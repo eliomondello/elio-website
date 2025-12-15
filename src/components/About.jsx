@@ -215,14 +215,11 @@ const About = ({ language = 'en' }) => {
       timeline: {
         title: 'IL MIO PERCORSO',
         subtitle: 'Dalle umili origini all\'impatto internazionale',
-        events: content.en.timeline.events.map(event => ({
-          ...event,
-          // Italian translations would go here
-        }))
+        events: [] // Will be filled from en version
       },
       skills: {
         title: 'COMPETENZE',
-        categories: content.en.skills.categories
+        categories: [] // Will be filled from en version
       }
     },
     no: {
@@ -243,19 +240,26 @@ const About = ({ language = 'en' }) => {
       timeline: {
         title: 'MIN REISE',
         subtitle: 'Fra ydmyke begynnelser til internasjonal påvirkning',
-        events: content.en.timeline.events.map(event => ({
-          ...event,
-          // Norwegian translations would go here
-        }))
+        events: [] // Will be filled from en version
       },
       skills: {
         title: 'EKSPERTISE',
-        categories: content.en.skills.categories
+        categories: [] // Will be filled from en version
       }
     }
   }
 
-  const t = content[language]
+  // Fill in translations from English version
+  if (language === 'it') {
+    content.it.timeline.events = content.en.timeline.events
+    content.it.skills.categories = content.en.skills.categories
+  }
+  if (language === 'no') {
+    content.no.timeline.events = content.en.timeline.events
+    content.no.skills.categories = content.en.skills.categories
+  }
+  
+  const t = content[language] || content.en
 
   return (
     <div className="min-h-screen bg-black text-white">
