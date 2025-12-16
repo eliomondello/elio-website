@@ -6,6 +6,12 @@ import timelineImg1 from '../assets/IMG_20220610_125357490_HDR_PORTRAIT.jpg'
 import timelineImg2 from '../assets/IMG_20230917_191400957_HDR-EDIT.jpg'
 import timelineImg3 from '../assets/IMG_20240611_162138568_HDR.jpg'
 import heroImage from '../assets/IMG_20250706_154109459_HDR_PORTRAIT.jpg'
+import childhoodImg from '../assets/childhood_church.JPG'
+import highschoolImg from '../assets/highschool_beach.jpg'
+import universityImg from '../assets/university_milano.jpg'
+import erasmusImg from '../assets/erasmus_party.jpg'
+import bookCover1 from '../assets/imagine-your-dream.jpeg'
+import bookCover2 from '../assets/online-media-video.jpeg'
 
 const About = ({ language = 'en' }) => {
   const [activeYear, setActiveYear] = useState(null)
@@ -34,9 +40,17 @@ const About = ({ language = 'en' }) => {
             year: '1978',
             title: 'BORN IN ABBIATEGRASSO',
             location: 'Milan, Italy',
-            description: 'Born into a multicultural family in the heart of Lombardy. Early exposure to different cultures and languages shaped my worldview and passion for international connections.',
-            image: timelineImg1,
-            category: 'ORIGINS'
+            description: 'Born in Abbiategrasso, a small town near Milan, into a multicultural family that shaped my global perspective from an early age.',
+            image: childhoodImg,
+            category: 'LIFE'
+          },
+          {
+            year: '1992-1997',
+            title: 'HIGH SCHOOL',
+            location: 'Milan, Italy',
+            description: 'High school years filled with friendships, first experiences, and discovering my passion for communication and connecting with people.',
+            image: highschoolImg,
+            category: 'EDUCATION'
           },
           {
             year: '1992-1997',
@@ -57,7 +71,7 @@ const About = ({ language = 'en' }) => {
             title: 'UNIVERSITÀ DEGLI STUDI DI MILANO',
             location: 'Milan, Italy',
             description: 'Bachelor of Arts (B.A.) in Communication and Media, Grade 95/110. Online university magazine internship, web design course, dissertation in Italian and French on "European media".',
-            image: timelineImg2,
+            image: universityImg,
             category: 'EDUCATION'
           },
           {
@@ -72,7 +86,7 @@ const About = ({ language = 'en' }) => {
             title: 'ERASMUS AT SCIENCES PO GRENOBLE',
             location: 'Grenoble, France',
             description: 'Public Administration degree through European Union Exchange Program (Erasmus). Worked as community event manager, inspired mixed culture by creating social events with cooking classes, music and engaging opportunities for all students.',
-            image: timelineImg3,
+            image: erasmusImg,
             category: 'EDUCATION'
           },
           {
@@ -87,6 +101,7 @@ const About = ({ language = 'en' }) => {
             title: 'MASTER IN PROJECT MANAGEMENT',
             location: 'Milan, Italy',
             description: 'Master of Arts (M.A.) in Project Management at Università degli Studi di Milano. Internship in ISTUD business school, developing technical proficiency in project management.',
+            image: universityImg,
             category: 'EDUCATION'
           },
           {
@@ -143,6 +158,7 @@ const About = ({ language = 'en' }) => {
             title: 'PUBLISHED "IMAGINE YOUR DREAM"',
             location: 'Amazon',
             description: 'Released "Imagine Your Dream" on Amazon - a book about core principles and rock-solid strategies for implementing change and achieving success.',
+            image: bookCover1,
             category: 'PUBLICATIONS'
           },
           {
@@ -153,18 +169,18 @@ const About = ({ language = 'en' }) => {
             category: 'SPEAKING'
           },
           {
-            year: '2024-PRESENT',
-            title: 'THIERRY FEUERBACHER BARNEHAGE',
-            location: 'Thierry Feuerbacher, Norway',
-            description: 'Teacher and educator at kindergarten/preschool, combining education expertise with multicultural experience to inspire young learners.',
-            category: 'EDUCATION'
+            year: '2024',
+            title: 'KIRKEMOEN',
+            location: 'Norway',
+            description: 'Working at Kirkemoen, contributing expertise in education and cultural integration.',
+            category: 'EXPERIENCE'
           },
           {
             year: '2024-PRESENT',
-            title: 'SCHULSTAD-OGBU PSYCHIATRIC CENTER',
-            location: 'Thierry Feuerbacher, Norway',
-            description: 'Staff member at psychiatric center, applying communication and cultural integration skills to support mental health and wellbeing.',
-            category: 'HEALTHCARE'
+            title: 'SOLSTAD',
+            location: 'Norway',
+            description: 'Currently working at Solstad, combining professional experience with commitment to education and community development.',
+            category: 'EXPERIENCE'
           },
           {
             year: '2025',
