@@ -383,8 +383,8 @@ const About = ({ language = 'en' }) => {
                   {/* Year Circle */}
                   <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-yellow-400 rounded-full transform -translate-x-1/2 z-10"></div>
 
-                  {/* Desktop Layout - Alternating */}
-                  <div className={`hidden md:flex md:items-center md:gap-8 ${
+                  {/* Content Container - Responsive */}
+                  <div className={`ml-16 md:ml-0 md:flex md:items-center md:gap-8 ${
                     index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}>
                     {/* Content Side */}
@@ -397,12 +397,12 @@ const About = ({ language = 'en' }) => {
                       <h3 className="text-2xl md:text-3xl font-bold text-yellow-400 mb-2">{event.year}</h3>
                       <h4 className="text-xl md:text-2xl font-bold mb-2">{event.title}</h4>
                       <p className="text-gray-400 mb-2">{event.location}</p>
-                      <p className="text-gray-300">{event.description}</p>
+                      <p className="text-gray-300 mb-4 md:mb-0">{event.description}</p>
                     </div>
 
                     {/* Image Side */}
                     {event.image && (
-                      <div className="md:w-1/2">
+                      <div className="md:w-1/2 mt-4 md:mt-0">
                         <img
                           src={event.image}
                           alt={event.title}
@@ -411,26 +411,7 @@ const About = ({ language = 'en' }) => {
                         />
                       </div>
                     )}
-                    {!event.image && <div className="md:w-1/2"></div>}
-                  </div>
-
-                  {/* Mobile Layout - Always Left Aligned */}
-                  <div className="flex md:hidden flex-col ml-16">
-                    <span className="inline-block px-3 py-1 bg-yellow-400/20 text-yellow-400 text-sm rounded-full mb-2 w-fit">
-                      {event.category}
-                    </span>
-                    <h3 className="text-2xl font-bold text-yellow-400 mb-2">{event.year}</h3>
-                    <h4 className="text-xl font-bold mb-2">{event.title}</h4>
-                    <p className="text-gray-400 mb-2">{event.location}</p>
-                    <p className="text-gray-300 mb-4">{event.description}</p>
-                    {event.image && (
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        className="w-full h-64 object-cover rounded-lg"
-                        style={{ filter: 'none' }}
-                      />
-                    )}
+                    {!event.image && <div className="hidden md:block md:w-1/2"></div>}
                   </div>
                 </motion.div>
               ))}
@@ -438,6 +419,7 @@ const About = ({ language = 'en' }) => {
           </div>
         </div>
       </section>
+
 
       {/* Skills Section */}
       <section className="py-20 px-4 md:px-8 max-w-6xl mx-auto">
