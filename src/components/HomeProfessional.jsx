@@ -76,15 +76,15 @@ const HomeProfessional = ({ language = 'en' }) => {
       books: {
         title: 'BOOKS',
         subtitle: 'Sharing knowledge through writing',
-        items: [
-          { title: 'Imagine Your Dream: How to Reach The Top on The Internet', desc: 'A comprehensive guide to online marketing and digital success.', status: 'AVAILABLE NOW' },
-          { title: 'Imagine Your Dream: Live Your Dream', desc: 'Personal development and goal-setting strategies for success.', status: 'AVAILABLE NOW' },
-          { title: 'Sei Paesi, Una Storia', desc: 'A heartfelt multicultural memoir exploring identity, family legacy, and belonging across six countries.', status: 'COMING SOON' }
+        books: [
+          { title: 'Imagine Your Dream: How to Reach The Top on The Internet', desc: 'A comprehensive guide to online marketing and digital success.', status: 'AVAILABLE NOW', link: 'https://www.amazon.com/dp/B0D4NZ18Y7' },
+          { title: 'Imagine Your Dream: Live Your Dream', desc: 'Personal development and goal-setting strategies for success.', status: 'AVAILABLE NOW', link: 'https://www.amazon.com/dp/1519429495' },
+          { title: 'Six Countries, One Story', desc: 'A heartfelt multicultural memoir exploring identity, family legacy, and belonging across six countries.', status: 'COMING SOON' }
         ],
         cta: 'VIEW ALL BOOKS'
       },
       cta: {
-        title: "LET'S CREATE SOMETHING EXTRAORDINARY",
+        title: "LET'S CREATE SOMETHING SPECIAL",
         button: 'GET IN TOUCH'
       }
     },
@@ -139,14 +139,14 @@ const HomeProfessional = ({ language = 'en' }) => {
         title: 'LIBRI',
         subtitle: 'Condividere conoscenza attraverso la scrittura',
         items: [
-          { title: 'Imagine Your Dream: How to Reach The Top on The Internet', desc: 'Una guida completa al marketing online e al successo digitale.', status: 'DISPONIBILE ORA' },
-          { title: 'Imagine Your Dream: Live Your Dream', desc: 'Strategie di sviluppo personale e definizione degli obiettivi.', status: 'DISPONIBILE ORA' },
-          { title: 'Sei Paesi, Una Storia', desc: 'Un memoir multiculturale che esplora identità, eredità familiare e appartenenza attraverso sei paesi.', status: 'IN ARRIVO' }
+          { title: 'Imagine Your Dream: How to Reach The Top on The Internet', desc: 'Una guida completa al marketing online e al successo digitale.', status: 'DISPONIBILE ORA', link: 'https://www.amazon.com/dp/B0D4NZ18Y7' },
+          { title: 'Imagine Your Dream: Live Your Dream', desc: 'Strategie di sviluppo personale e definizione degli obiettivi.', status: 'DISPONIBILE ORA', link: 'https://www.amazon.com/dp/1519429495' },
+          { title: 'Six Countries, One Story', desc: 'Un memoir multiculturale che esplora identità, eredità familiare e appartenenza attraverso sei paesi.', status: 'IN ARRIVO' }
         ],
         cta: 'VEDI TUTTI I LIBRI'
       },
       cta: {
-        title: 'CREIAMO QUALCOSA DI STRAORDINARIO',
+        title: "CREIAMO QUALCOSA DI SPECIALE",
         button: 'CONTATTAMI'
       }
     },
@@ -469,20 +469,30 @@ const HomeProfessional = ({ language = 'en' }) => {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {t.books.items.map((book, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="p-8 border-2 border-white/10 hover:border-yellow-400 transition-all duration-300 rounded-lg"
-              >
-                <h3 className="text-2xl font-bold mb-4">{book.title}</h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">{book.desc}</p>
-                <span className="inline-block px-4 py-2 bg-yellow-400 text-black font-bold rounded">{book.status}</span>
-              </motion.div>
-            ))}
+            {t.books.items.map((book, index) => {
+              const BookCard = (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="p-8 border-2 border-white/10 hover:border-yellow-400 transition-all duration-300 rounded-lg group cursor-pointer"
+                >
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-yellow-400 transition-colors">{book.title}</h3>
+                  <p className="text-gray-400 mb-6 leading-relaxed">{book.desc}</p>
+                  <span className="inline-block px-4 py-2 bg-yellow-400 text-black font-bold rounded group-hover:bg-white transition-colors">{book.status}</span>
+                </motion.div>
+              );
+              
+              return book.link ? (
+                <a key={index} href={book.link} target="_blank" rel="noopener noreferrer" className="block">
+                  {BookCard}
+                </a>
+              ) : (
+                BookCard
+              );
+            })}
           </div>
 
           <motion.div

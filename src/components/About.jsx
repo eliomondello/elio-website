@@ -15,6 +15,11 @@ import masterImg from '../assets/master_photo.JPG'
 import erasmusImg from '../assets/erasmus_party.jpg'
 import bookCover1 from '../assets/imagine-your-dream.jpeg'
 import bookCover2 from '../assets/online-media-video.jpeg'
+import mondelioImg from '../assets/mondelio_business.jpg'
+import mondosolImg from '../assets/mondosol_school.jpg'
+import nurseryImg from '../assets/nursery_norway.jpg'
+import bookWebsiteImg from '../assets/book_website_marketing.jpg'
+import londonSpeakerImg from '../assets/london_speaker.jpg'
 
 const About = ({ language = 'en' }) => {
   const [activeYear, setActiveYear] = useState(null)
@@ -103,10 +108,11 @@ const About = ({ language = 'en' }) => {
             category: 'EDUCATION'
           },
           {
-            year: '2008',
-            title: 'FOUNDED MONDOSOL',
-            location: 'Italy & Norway',
-            description: 'Founded Mondosol, a language school and cultural organization helping businesses scale across Europe through multilingual education, marketing, and business consulting.',
+            year: '2006',
+            title: 'FOUNDED MONDELIO',
+            location: 'Italy',
+            description: 'Launched first entrepreneurial venture in Italy, combining education, consulting, and digital marketing services for small businesses and entrepreneurs.',
+            image: mondelioImg,
             category: 'ENTREPRENEURSHIP'
           },
           {
@@ -118,16 +124,26 @@ const About = ({ language = 'en' }) => {
           },
           {
             year: '2011',
-            title: 'FIRST BUSINESS IN ITALY',
-            location: 'Italy',
-            description: 'Launched first entrepreneurial venture in Italy, combining education, consulting, and digital marketing services for small businesses and entrepreneurs.',
+            title: 'FOUNDED MONDOSOL',
+            location: 'Norway',
+            description: 'Founded Mondosol, a language school and cultural organization helping businesses scale across Europe through multilingual education, marketing, and business consulting.',
+            image: mondosolImg,
             category: 'ENTREPRENEURSHIP'
+          },
+          {
+            year: '2011-2023',
+            title: 'NURSERY SCHOOLS IN NORWAY',
+            location: 'Usle, Elgeru, Venteru - Norway',
+            description: 'Worked for two agencies managing multiple nursery schools (barnehager) in Norway including Usle, Elgeru, and Venteru, providing educational consulting and administrative support.',
+            image: nurseryImg,
+            category: 'EXPERIENCE'
           },
           {
             year: '2012',
             title: 'PUBLISHED "HOW TO CREATE AND MARKET A WEBSITE"',
             location: 'International',
             description: 'Released comprehensive guide on www.eliomondello.com covering 5 marketing tips, utilizing internet for leads, new media revolution, and mobile media strategies.',
+            image: bookWebsiteImg,
             category: 'PUBLICATIONS'
           },
           {
@@ -164,6 +180,7 @@ const About = ({ language = 'en' }) => {
             title: 'SPEAKER IN LONDON',
             location: 'London, UK',
             description: 'First major speaking engagement in London as invited host. Shared insights on entrepreneurship, multilingual marketing, and scaling businesses across Europe.',
+            image: londonSpeakerImg,
             category: 'SPEAKING'
           },
           {
@@ -174,18 +191,18 @@ const About = ({ language = 'en' }) => {
             category: 'EXPERIENCE'
           },
           {
-            year: '2024-PRESENT',
-            title: 'SOLSTAD',
-            location: 'Norway',
-            description: 'Currently working at Solstad, combining professional experience with commitment to education and community development.',
+            year: 'October 2025-PRESENT',
+            title: 'TYRIFJORD BARNE- OG UNGDOMSSKOLE',
+            location: 'Tyrifjord, Vik - Norway',
+            description: 'Currently working at Tyrifjord barne- og ungdomsskole, an Adventist church primary and secondary school near Vik, providing educational support and cultural integration services.',
             category: 'EXPERIENCE'
           },
           {
-            year: '2025',
-            title: 'INTERNATIONAL CONSULTANT & EDUCATOR',
-            location: 'Europe',
-            description: 'Continuing to help businesses scale through property management, multilingual marketing, education consulting, and speaking engagements across Europe.',
-            category: 'PRESENT'
+            year: 'October 2025-PRESENT',
+            title: 'SOLSTAD OG BU',
+            location: 'Near Tyrifjord - Norway',
+            description: 'Currently working at Solstad og Bu, a residential care facility for people with mental health challenges and substance abuse issues, providing support and community development services.',
+            category: 'EXPERIENCE'
           }
         ]
       },
@@ -370,7 +387,7 @@ const About = ({ language = 'en' }) => {
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-yellow-400/30 transform md:-translate-x-1/2"></div>
 
             {/* Timeline Events */}
-            <div className="space-y-12">
+            <div className="space-y-16">
               {t.timeline.events.map((event, index) => (
                 <motion.div
                   key={index}
