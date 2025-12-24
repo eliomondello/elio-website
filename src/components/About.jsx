@@ -7,8 +7,9 @@ import timelineImg2 from '../assets/IMG_20230917_191400957_HDR-EDIT.jpg'
 import timelineImg3 from '../assets/IMG_20240611_162138568_HDR.jpg'
 import heroImage from '../assets/IMG_20250706_154109459_HDR_PORTRAIT.jpg'
 import childhoodImg from '../assets/childhood_bw.jpg'
-import highschoolImg from '../assets/highschool_beach.jpg'
+import highschoolImg from '../assets/highschool_beach_group.jpg'
 import journalismImg from '../assets/journalism_photo.jpg'
+import crazyColorImg from '../assets/crazy_color_beach.jpg'
 import universityImg from '../assets/university_photo.JPG'
 import masterImg from '../assets/master_photo.JPG'
 import erasmusImg from '../assets/erasmus_party.jpg'
@@ -75,6 +76,7 @@ const About = ({ language = 'en' }) => {
             title: 'CRAZY COLOR FOUNDATION',
             location: 'Italy',
             description: 'Event Manager Certificate. Internship as DJ and entertainer in the 4th biggest holiday resort in Italy, gaining experience in entertainment and event management.',
+            image: crazyColorImg,
             category: 'EXPERIENCE'
           },
           {
@@ -376,35 +378,60 @@ const About = ({ language = 'en' }) => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className={`relative flex flex-col md:flex-row items-start md:items-center ${
-                    index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                  }`}
+                  className="relative"
                 >
                   {/* Year Circle */}
-                  <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-yellow-400 rounded-full transform -translate-x-1/2 md:translate-x-0"></div>
+                  <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-yellow-400 rounded-full transform -translate-x-1/2 z-10"></div>
 
-                  {/* Content */}
-                  <div className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                    <span className="inline-block px-3 py-1 bg-yellow-400/20 text-yellow-400 text-sm rounded-full mb-2">
-                      {event.category}
-                    </span>
-                    <h3 className="text-2xl md:text-3xl font-bold text-yellow-400 mb-2">{event.year}</h3>
-                    <h4 className="text-xl md:text-2xl font-bold mb-2">{event.title}</h4>
-                    <p className="text-gray-400 mb-2">{event.location}</p>
-                    <p className="text-gray-300">{event.description}</p>
+                  {/* Desktop Layout - Alternating */}
+                  <div className={`hidden md:flex md:items-center md:gap-8 ${
+                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}>
+                    {/* Content Side */}
+                    <div className={`md:w-1/2 ${
+                      index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16 md:text-left'
+                    }`}>
+                      <span className="inline-block px-3 py-1 bg-yellow-400/20 text-yellow-400 text-sm rounded-full mb-2">
+                        {event.category}
+                      </span>
+                      <h3 className="text-2xl md:text-3xl font-bold text-yellow-400 mb-2">{event.year}</h3>
+                      <h4 className="text-xl md:text-2xl font-bold mb-2">{event.title}</h4>
+                      <p className="text-gray-400 mb-2">{event.location}</p>
+                      <p className="text-gray-300">{event.description}</p>
+                    </div>
+
+                    {/* Image Side */}
+                    {event.image && (
+                      <div className="md:w-1/2">
+                        <img
+                          src={event.image}
+                          alt={event.title}
+                          className="w-full h-64 object-cover rounded-lg shadow-xl"
+                          style={{ filter: 'none' }}
+                        />
+                      </div>
+                    )}
+                    {!event.image && <div className="md:w-1/2"></div>}
                   </div>
 
-                  {/* Image */}
-                  {event.image && (
-                    <div className={`mt-4 md:mt-0 ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'}`}>
+                  {/* Mobile Layout - Always Left Aligned */}
+                  <div className="flex md:hidden flex-col ml-16">
+                    <span className="inline-block px-3 py-1 bg-yellow-400/20 text-yellow-400 text-sm rounded-full mb-2 w-fit">
+                      {event.category}
+                    </span>
+                    <h3 className="text-2xl font-bold text-yellow-400 mb-2">{event.year}</h3>
+                    <h4 className="text-xl font-bold mb-2">{event.title}</h4>
+                    <p className="text-gray-400 mb-2">{event.location}</p>
+                    <p className="text-gray-300 mb-4">{event.description}</p>
+                    {event.image && (
                       <img
                         src={event.image}
                         alt={event.title}
                         className="w-full h-64 object-cover rounded-lg"
                         style={{ filter: 'none' }}
                       />
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </motion.div>
               ))}
             </div>
